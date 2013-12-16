@@ -3,6 +3,7 @@ import org.springframework.orm.jpa.JpaTransactionManager
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
 
 import com.hantsylabs.example.spring.jpa.JpaConferenceDaoImpl
+import com.hantsylabs.example.spring.service.ConferenceService
 
 
 
@@ -32,6 +33,10 @@ beans {
 	 }
 	 
 	 conferenceDao(JpaConferenceDaoImpl){
+	 }
+	 
+	 conferenceService(ConferenceService){
+		 conferenceDao=conferenceDao
 	 }
 
  }

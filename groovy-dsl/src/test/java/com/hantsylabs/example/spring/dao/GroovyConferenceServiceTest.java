@@ -26,13 +26,14 @@ import org.springframework.test.context.support.AbstractGenericContextLoader;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.dao.GroovyJpaConferenceDaoImplTest.GenericGroovyContextLoader;
+import com.hantsylabs.example.spring.dao.GroovyConferenceServiceTest.GenericGroovyContextLoader;
 import com.hantsylabs.example.spring.model.Conference;
+import com.hantsylabs.example.spring.service.ConferenceService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "classpath:/com/hantsylabs/example/spring/config/JpaConfigGroovy.groovy", loader = GenericGroovyContextLoader.class)
 @TransactionConfiguration
-public class GroovyJpaConferenceDaoImplTest {
+public class GroovyConferenceServiceTest {
 
 	public static class GenericGroovyContextLoader extends
 			AbstractGenericContextLoader {
@@ -51,10 +52,13 @@ public class GroovyJpaConferenceDaoImplTest {
 	}
 
 	private static final Logger log = LoggerFactory
-			.getLogger(GroovyJpaConferenceDaoImplTest.class);
+			.getLogger(GroovyConferenceServiceTest.class);
 
 	@Autowired
 	ConferenceDao conferenceDao;
+	
+	@Autowired
+	ConferenceService conferenceService;
 
 	@PersistenceContext
 	EntityManager entityManager;
@@ -123,73 +127,13 @@ public class GroovyJpaConferenceDaoImplTest {
 		assertTrue("JUD2013".equals(conference.getName()));
 
 		// query by slug
-		conference = conferenceDao.findBySlug("jud-2013");
+		conference = (Conference) conferenceService.findConferenceBySlug("jud-2013");
+		
+		log.debug("conference @"+conference);
 
 		assertTrue(conference != null);
 
-		assertTrue("JUD2013".equals(conference.getName()));
-
-		// query by slug
-		conference = conferenceDao.findBySlug("jud-2013-1");
-
-		assertTrue(conference == null);
 	}
 
-	@Test
-	@Transactional
-	public void updateConference() {
-
-		Long id = conferenceDao.save(newConference());
-
-		entityManager.flush();
-
-		assertTrue(id != null);
-		log.debug("id @=" + id);
-		Conference conference = conferenceDao.findById(id);
-
-		assertTrue(conference != null);
-
-		assertTrue("JUD2013".equals(conference.getName()));
-
-		String name = "JUD2013Boston";
-		conference.setName(name);
-
-		conferenceDao.update(conference);
-
-		entityManager.flush();
-
-		conference = conferenceDao.findById(id);
-
-		assertTrue(name.equals(conference.getName()));
-
-	}
-
-	@Test
-	@Transactional
-	public void deleteConference() {
-
-		Long id = conferenceDao.save(newConference());
-
-		entityManager.flush();
-
-		assertTrue(id != null);
-		log.debug("id @=" + id);
-		Conference conference = conferenceDao.findById(id);
-
-		assertTrue(conference != null);
-
-		assertTrue("JUD2013".equals(conference.getName()));
-
-		conferenceDao.delete(conference);
-
-		entityManager.flush();
-
-		conference = conferenceDao.findById(id);
-
-		log.debug("conference@" + conference);
-
-		assertTrue(conference == null);
-
-	}
 
 }
