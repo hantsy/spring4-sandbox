@@ -16,10 +16,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.hantsylabs.example.spring.config.AppConfig;
-import com.hantsylabs.example.spring.config.AppConfig.ConferenceList;
 import com.hantsylabs.example.spring.config.JpaConfig;
 import com.hantsylabs.example.spring.model.Conference;
-import com.hantsylabs.example.spring.service.ConferenceService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { JpaConfig.class, AppConfig.class })
@@ -36,8 +34,8 @@ public class GenericTypeBeanTest {
 	@Autowired
 	ApplicationContext ctx;
 	
-	@Autowired
-	ConferenceService svc;
+/*	@Autowired
+	ConferenceService svc;*/
 	
 	@BeforeClass
 	public static void initTestClass() {
@@ -66,18 +64,18 @@ public class GenericTypeBeanTest {
 	@Test
 	public void testConfs2() {
 		log.debug("call testConfs2@@@");
-		ConferenceList confs2=(ConferenceList)ctx.getBean("availableConferences");
+		List<Conference> confs2=(List<Conference>)ctx.getBean("availableConferences");
 		Assert.assertTrue(confs2!=null);
 		Assert.assertTrue(confs2.size()==3);
 	}
 	
-	
+/*	
 	@Test
 	public void testConfs3() {
 		log.debug("call testConfs 3 from ConferenceService@@@");
 		List<Conference> confs=svc.availableConferences();
 		Assert.assertTrue(confs!=null);
 		Assert.assertTrue(confs.size()==3);
-	}
+	}*/
 
 }

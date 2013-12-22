@@ -1,12 +1,16 @@
 package com.hantsylabs.example.spring.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
@@ -49,6 +53,9 @@ public class Conference {
 	@NotNull
 	@Column(name = "slug")
 	private String slug;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="conference")
+	private List<Signup> signups=new ArrayList<Signup>();
 
 	public Conference(String name, Date startedDate) {
 		super();
@@ -115,6 +122,16 @@ public class Conference {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public List<Signup> getSignups() {
+		return signups;
+	}
+
+
+	public void setSignups(List<Signup> signups) {
+		this.signups = signups;
+	}
+
 
 	public Integer getVersion() {
 		return this.version;
