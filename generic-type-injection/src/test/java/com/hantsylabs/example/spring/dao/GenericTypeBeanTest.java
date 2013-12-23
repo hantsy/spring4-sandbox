@@ -66,7 +66,7 @@ public class GenericTypeBeanTest {
 		log.debug("call testConfs2@@@");
 		List<Conference> confs2=(List<Conference>)ctx.getBean("availableConferences");
 		Assert.assertTrue(confs2!=null);
-		Assert.assertTrue(confs2.size()==3);
+		Assert.assertTrue(confs2.size()==2);
 	}
 	
 /*	
