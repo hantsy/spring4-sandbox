@@ -1,9 +1,8 @@
 package com.hantsylabs.example.spring.dao;
 
-import java.util.List;
+import static org.junit.Assert.*;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,33 +13,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.hantsylabs.example.spring.annotation.SignupRepository;
 import com.hantsylabs.example.spring.config.AppConfig;
 import com.hantsylabs.example.spring.config.JpaConfig;
-import com.hantsylabs.example.spring.model.Conference;
+import com.hantsylabs.example.spring.model.Signup;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, AppConfig.class })
-public class GenericTypeBeanTest {
+@ContextConfiguration(classes = { AppConfig.class, JpaConfig.class })
+@TransactionConfiguration
+@Transactional
+public class MetaAnnotationTest {
 
 	private static final Logger log = LoggerFactory
-			.getLogger(GenericTypeBeanTest.class);
-	
+			.getLogger(MetaAnnotationTest.class);
 
-//	@Autowired
-//	List<Conference> availableConferences;
-	
-	
 	@Autowired
 	ApplicationContext ctx;
-	
-/*	@Autowired
-	ConferenceService svc;*/
-	
+
+	@Autowired
+	SignupRepository signupRepository;
+
 	@BeforeClass
 	public static void initTestClass() {
 		log.debug("===================before class======================");
-
 	}
 
 	@Before
@@ -53,29 +51,19 @@ public class GenericTypeBeanTest {
 		log.debug("===================after test=====================");
 	}
 
-	
-//	@Test
-//	public void testConfs() {
-//		log.debug("call testConfs@@@");
-//		Assert.assertTrue(availableConferences!=null);
-//		Assert.assertTrue(availableConferences.size()==3);
-//	}
-	
 	@Test
-	public void testConfs2() {
-		log.debug("call testConfs2@@@");
-		List<Conference> confs2=(List<Conference>)ctx.getBean("availableConferences");
-		Assert.assertTrue(confs2!=null);
-		Assert.assertTrue(confs2.size()==2);
+	public void testSignup() {
+		log.debug("call testSignup CURD@@@");
+
+		Signup entity = new Signup("Hantsy", "Bai", "hantsy@gmail.com");
+
+		Long savedId = signupRepository.save(entity);
+		log.debug("saved id@" + savedId);
+		assertTrue(savedId != null);
+		
+		Signup signup=signupRepository.findById(savedId);
+		assertTrue(signup.getFirstName().equals("Hantsy"));
+
 	}
-	
-/*	
-	@Test
-	public void testConfs3() {
-		log.debug("call testConfs 3 from ConferenceService@@@");
-		List<Conference> confs=svc.availableConferences();
-		Assert.assertTrue(confs!=null);
-		Assert.assertTrue(confs.size()==3);
-	}*/
 
 }
