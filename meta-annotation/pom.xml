@@ -7,7 +7,7 @@
 	<name>Spring 4:Meta-Annotations</name>
 	<description>Meta-Annotations</description>
 	<parent>
-		<groupId>com.hantsylabs.example.spring</groupId>
+		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>
 		<version>0.1.0.BUILD-SNAPSHOT</version>
 		<relativePath>../</relativePath>
