@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>jpa-cache</artifactId>
+	<artifactId>hibernate4</artifactId>
 	<packaging>jar</packaging>
-	<name>jpa-cache</name>
-	<description>JPA 2nd level cache</description>
+	<name>jpa</name>
+	<description>Using Hibernate4 API in Spring</description>
 	<parent>
 		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>
@@ -54,7 +54,10 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-
+		<!-- ROO dependencies -->
+		<!-- <dependency> <groupId>org.springframework.roo</groupId> <artifactId>org.springframework.roo.annotations</artifactId> 
+			<version>${roo.version}</version> <scope>provided</scope> </dependency> -->
+		<!-- Spring dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -95,10 +98,6 @@
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache-core</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<exclusions>
@@ -111,14 +110,6 @@
 					<artifactId>dom4j</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-ehcache</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-infinispan</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -166,16 +157,6 @@
 			<artifactId>jsr250-api</artifactId>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-jms</artifactId> 
-			<version>${spring.version}</version> </dependency> <dependency> <groupId>org.apache.geronimo.specs</groupId> 
-			<artifactId>geronimo-jms_1.1_spec</artifactId> <version>1.1</version> </dependency> 
-			<dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-core</artifactId> 
-			<version>5.4.2</version> <exclusions> <exclusion> <groupId>commons-logging</groupId> 
-			<artifactId>commons-logging</artifactId> </exclusion> <exclusion> <groupId>commons-logging</groupId> 
-			<artifactId>commons-logging-api</artifactId> </exclusion> </exclusions> </dependency> 
-			<dependency> <groupId>org.apache.xbean</groupId> <artifactId>xbean-spring</artifactId> 
-			<version>3.6</version> <exclusions> <exclusion> <groupId>commons-logging</groupId> 
-			<artifactId>commons-logging</artifactId> </exclusion> </exclusions> </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>

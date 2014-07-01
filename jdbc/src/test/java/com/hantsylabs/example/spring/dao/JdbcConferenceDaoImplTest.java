@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.hibernate.ObjectNotFoundException;
-import org.hibernate.SessionFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -19,7 +17,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.hibernate3.Hibernate3ConferenceDaoImpl;
 import com.hantsylabs.example.spring.jdbc.JdbcConferenceDaoImpl;
 import com.hantsylabs.example.spring.model.Conference;
 
