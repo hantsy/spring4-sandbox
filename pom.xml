@@ -18,6 +18,7 @@
 		<module>data-jpa</module>
 		<module>data-jpa-audit</module>
 		<module>data-mongo</module>
+		<module>data-mongo-audit</module>
 		<module>data-mongo-crossstore</module>
 		<module>jpa-audit</module>
 		<module>jpa-revision</module>
