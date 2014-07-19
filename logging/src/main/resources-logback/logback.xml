@@ -15,11 +15,15 @@
 		</encoder>
 	</appender>
 
-	<root level="debug">
+	<root level="INFO">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>
-	<logger name="com.hantsylabs.example.spring">
+	<logger name="com.hantsylabs.example" level="DEBUG">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="org.springframework.data" level="DEBUG">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</logger>
