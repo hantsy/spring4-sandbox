@@ -20,11 +20,17 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hantsylabs.example.spring.config.ConcurrentMapCacheConfig;
+import com.hantsylabs.example.spring.config.EhCacheConfig;
+import com.hantsylabs.example.spring.config.HazelcastCacheConfig;
 import com.hantsylabs.example.spring.config.JpaConfig;
+import com.hantsylabs.example.spring.config.RedisCacheConfig;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class })
+@ContextConfiguration(classes = { JpaConfig.class, HazelcastCacheConfig.class,
+		ConcurrentMapCacheConfig.class, RedisCacheConfig.class,
+		EhCacheConfig.class })
 public class AnnotationConfigJpaConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
@@ -46,15 +52,15 @@ public class AnnotationConfigJpaConferenceDaoImplTest {
 	@Transactional
 	public void beforeTestCase() {
 		log.debug("===================before test=====================");
-		Long id = conferenceDao.save(newConference());
-		assertTrue(id != null);
+
+		conferenceDao.deleteAll();
 	}
 
 	@After
 	@Transactional
 	public void afterTestCase() {
 		log.debug("===================after test=====================");
-		conferenceDao.deleteAll();
+
 	}
 
 	private Conference newConference() {
@@ -101,67 +107,10 @@ public class AnnotationConfigJpaConferenceDaoImplTest {
 
 		assertTrue("JUD2013".equals(conference.getName()));
 
-		// query by slug
-		conference = conferenceDao.findBySlug("jud-2013-1");
+		log.debug("@@@@@@@@@@@@@@loading from cache@@@@@@@@@@@@@@@@@@@@");
 
-		assertTrue(conference == null);
-	}
-
-	@Test
-	@Transactional
-	public void updateConference() {
-
-		Long id = conferenceDao.save(newConference());
-
-		entityManager.flush();
-
-		assertTrue(id != null);
-		log.debug("id @=" + id);
-		Conference conference = conferenceDao.findById(id);
-
-		assertTrue(conference != null);
-
-		assertTrue("JUD2013".equals(conference.getName()));
-
-		String name = "JUD2013Boston";
-		conference.setName(name);
-
-		conferenceDao.update(conference);
-
-		entityManager.flush();
-
-		conference = conferenceDao.findById(id);
-
-		assertTrue(name.equals(conference.getName()));
-
-	}
-
-	@Test
-	@Transactional
-	public void deleteConference() {
-
-		Long id = conferenceDao.save(newConference());
-
-		entityManager.flush();
-
-		assertTrue(id != null);
-		log.debug("id @=" + id);
-		Conference conference = conferenceDao.findById(id);
-
-		assertTrue(conference != null);
-
-		assertTrue("JUD2013".equals(conference.getName()));
-
-		conferenceDao.delete(conference);
-
-		entityManager.flush();
-
-		conference = conferenceDao.findById(id);
-
-		log.debug("conference@" + conference);
-
-		assertTrue(conference == null);
-
+		Conference conference2 = conferenceDao.findById(conference.getId());
+		assertTrue(conference2 != null);
 	}
 
 }

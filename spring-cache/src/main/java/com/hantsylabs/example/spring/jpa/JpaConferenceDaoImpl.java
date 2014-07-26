@@ -31,6 +31,7 @@ public class JpaConferenceDaoImpl implements ConferenceDao {
 	}
 
 	@Override
+	@CacheEvict(value="conference", key="#p0.id")
 	public Long save(final Conference conference) {
 		entityManager.persist(conference);
 		return conference.getId();

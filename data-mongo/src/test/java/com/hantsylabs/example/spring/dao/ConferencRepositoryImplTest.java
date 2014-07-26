@@ -29,6 +29,7 @@ import com.hantsylabs.example.spring.model.Signup;
 import com.hantsylabs.example.spring.model.Status;
 import com.hantsylabs.example.spring.mongo.ConferenceRepository;
 import com.hantsylabs.example.spring.mongo.SignupRepository;
+import com.mysema.query.BooleanBuilder;
 import com.mysema.query.mongodb.JoinBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -98,7 +99,7 @@ public class ConferencRepositoryImplTest {
 	}
 
 	@BeforeClass
-	public static void init() {
+	public static void beforeClass() {
 		log.debug("==================before class=========================");
 
 	}
@@ -106,14 +107,16 @@ public class ConferencRepositoryImplTest {
 	@Before
 	public void beforeTestCase() {
 		log.debug("==================before test case=========================");
-		conferenceRepository.save(newConference());
+		signupRepository.deleteAll();
+		conferenceRepository.deleteAll();
+		//conferenceRepository.save(newConference());
 	}
 
 	@After
 	public void afterTestCase() {
 		log.debug("==================after test case=========================");
-		signupRepository.deleteAll();
-		conferenceRepository.deleteAll();
+//		signupRepository.deleteAll();
+//		conferenceRepository.deleteAll();
 	}
 
 	@Test
@@ -121,7 +124,7 @@ public class ConferencRepositoryImplTest {
 		Conference conference = newConference();
 		conference.setSlug("test-jud");
 		conference.setName("Test JUD");
-		conference.getAddress().setCountry("US");
+		conference.getAddress().setCountry("CN");
 		conference = conferenceRepository.save(conference);
 
 		assertTrue(null != conference.getId());
@@ -133,6 +136,12 @@ public class ConferencRepositoryImplTest {
 				.findByAddressCountry("CN");
 		log.debug("findByAddressCountry@" + confs.size());
 		assertTrue(1 == confs.size());
+		
+		Conference conference2 = newConference();
+		conference2.setSlug("test-jud");
+		conference2.setName("Test JUD");
+		conference2.getAddress().setCountry("US");
+		conference2 = conferenceRepository.save(conference2);
 
 		confs = conferenceRepository.searchByDescription("Boston");
 		log.debug("searchByDescription@" + confs.size());
@@ -213,7 +222,7 @@ public class ConferencRepositoryImplTest {
 		assertTrue(1 == conferences.size());
 
 		List<Conference> conferences2 = (List<Conference>) conferenceRepository
-				.findAll(QConference.conference.address.country.eq("CN"));
+				.findAll(QConference.conference.address.country.eq("US"));
 		log.debug("conferences2.size()@" + conferences2.size());
 		assertTrue(1 == conferences2.size());
 
@@ -256,8 +265,6 @@ public class ConferencRepositoryImplTest {
 
 	}
 
-	DelegatingSpringDataMongodbQuery<Signup> signupQuery;
-
 	@Test
 	public void testMongodbQuery() {
 
@@ -280,18 +287,22 @@ public class ConferencRepositoryImplTest {
 		signup = signupRepository.save(signup);
 		log.debug("signup @" + signup);
 
-		signupQuery = new DelegatingSpringDataMongodbQuery<Signup>(
-				mongoTemplate, Signup.class);
-
 		// TODO does not work as expected.
-
-		// List<Signup> signups=
-		// signupQuery.where(QSignup.signup.id.isNotEmpty())
-		// .join(QSignup.signup.conference,
-		// QConference.conference).on(QConference.conference.eq(conf))
-		// .list();
-		//
-		// log.debug("signups.size()@" + signups.size());
-		// assertTrue(1 == signups.size());
+		
+		List<Signup> signups1=mongoTemplate.find(Query.query(Criteria.where("conference").is(conf)), Signup.class);
+		log.debug("signups1.size()@" + signups1.size());
+		assertTrue(1 == signups1.size());
+		
+//		QSignup qsignup = QSignup.signup;
+//		QConference qconf = QConference.conference;
+//		
+//		BooleanBuilder booleanBuilder=new BooleanBuilder();
+//		booleanBuilder.and(qsignup.conference.id.eq(conf.getId()));
+//		
+//		
+//		List<Signup> signups = (List<Signup>) signupRepository.findAll(booleanBuilder);
+//	
+//		log.debug("signups.size()@" + signups.size());
+//		assertTrue(1 == signups.size());
 	}
 }

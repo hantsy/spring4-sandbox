@@ -4,7 +4,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import org.hibernate.ejb.HibernatePersistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
@@ -13,7 +13,6 @@ import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -39,7 +38,7 @@ public class JpaConfig {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		emf.setDataSource(dataSource());
 		emf.setPackagesToScan("com.hantsylabs.example.spring.model");
-		emf.setPersistenceProvider(new HibernatePersistence());
+		emf.setPersistenceProvider(new HibernatePersistenceProvider());
 		emf.setJpaProperties(jpaProperties());
 		return emf;
 	}
@@ -57,18 +56,5 @@ public class JpaConfig {
 		return new JpaTransactionManager(entityManagerFactory().getObject());
 	}
 
-	@Bean
-	public CacheManager cacheManager() {
-		return new EhCacheCacheManager(ehcache().getObject());
-	}
-
-	@Bean
-	public EhCacheManagerFactoryBean ehcache() {
-
-		EhCacheManagerFactoryBean ehcache = new EhCacheManagerFactoryBean();
-		//ehcache.setConfigLocation(new ClassPathResource("ehcache.xml"));
-
-		return ehcache;
-	}
 
 }
