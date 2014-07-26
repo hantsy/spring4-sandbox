@@ -24,7 +24,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = { "com.hantsylabs.example.spring.dao",
 		"com.hantsylabs.example.spring.jpa" })
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
-@EnableCaching(mode=AdviceMode.ASPECTJ)
 public class JpaConfig {
 
 	@Bean
