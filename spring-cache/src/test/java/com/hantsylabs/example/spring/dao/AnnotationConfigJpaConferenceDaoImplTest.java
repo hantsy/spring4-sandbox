@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hantsylabs.example.spring.config.ConcurrentMapCacheConfig;
 import com.hantsylabs.example.spring.config.EhCacheConfig;
+import com.hantsylabs.example.spring.config.GuavaCacheConfig;
 import com.hantsylabs.example.spring.config.HazelcastCacheConfig;
 import com.hantsylabs.example.spring.config.InfinispanEmbeddedCacheConfig;
 import com.hantsylabs.example.spring.config.InfinispanRemoteCacheConfig;
@@ -37,7 +38,9 @@ import com.hantsylabs.example.spring.model.Conference;
 		RedisCacheConfig.class,//
 		EhCacheConfig.class, //
 		InfinispanEmbeddedCacheConfig.class, //
-		InfinispanRemoteCacheConfig.class })
+		InfinispanRemoteCacheConfig.class ,//
+		GuavaCacheConfig.class
+		})
 public class AnnotationConfigJpaConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
