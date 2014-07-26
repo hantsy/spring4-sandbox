@@ -23,14 +23,21 @@ import org.springframework.transaction.annotation.Transactional;
 import com.hantsylabs.example.spring.config.ConcurrentMapCacheConfig;
 import com.hantsylabs.example.spring.config.EhCacheConfig;
 import com.hantsylabs.example.spring.config.HazelcastCacheConfig;
+import com.hantsylabs.example.spring.config.InfinispanEmbeddedCacheConfig;
+import com.hantsylabs.example.spring.config.InfinispanRemoteCacheConfig;
 import com.hantsylabs.example.spring.config.JpaConfig;
 import com.hantsylabs.example.spring.config.RedisCacheConfig;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, HazelcastCacheConfig.class,
-		ConcurrentMapCacheConfig.class, RedisCacheConfig.class,
-		EhCacheConfig.class })
+@ContextConfiguration(classes = { 
+		JpaConfig.class, //
+		HazelcastCacheConfig.class,//
+		ConcurrentMapCacheConfig.class, //
+		RedisCacheConfig.class,//
+		EhCacheConfig.class, //
+		InfinispanEmbeddedCacheConfig.class, //
+		InfinispanRemoteCacheConfig.class })
 public class AnnotationConfigJpaConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
