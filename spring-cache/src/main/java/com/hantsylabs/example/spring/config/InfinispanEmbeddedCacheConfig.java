@@ -23,15 +23,18 @@ public class InfinispanEmbeddedCacheConfig implements CachingConfigurer {
 	@Bean
 	public CacheManager cacheManager() {
 
-		return new SpringEmbeddedCacheManager(new DefaultCacheManager(
-				new ConfigurationBuilder()
-					.eviction()
-						.maxEntries(20000).strategy(EvictionStrategy.LIRS)
-					.expiration()
-						.wakeUpInterval(5000L)
-						.maxIdle(120000L)
-		           .build()
-				));
+		return new SpringEmbeddedCacheManager(
+				new DefaultCacheManager(
+					new ConfigurationBuilder()
+						.eviction()
+							.maxEntries(20000)
+							.strategy(EvictionStrategy.LIRS)
+						.expiration()
+							.wakeUpInterval(5000L)
+							.maxIdle(120000L)
+			           .build()
+					)
+				);
 	}
 
 	@Override

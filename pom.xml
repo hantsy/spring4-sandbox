@@ -24,6 +24,7 @@
 		<module>jpa-revision</module>
 		<module>jpa-cache</module>
 		<module>spring-cache</module>
+		<module>spring-jcache</module>
 		<module>logging</module>
 	</modules>
 	<properties>

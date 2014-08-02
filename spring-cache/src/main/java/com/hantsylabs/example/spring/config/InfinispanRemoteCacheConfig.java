@@ -22,11 +22,14 @@ public class InfinispanRemoteCacheConfig implements CachingConfigurer {
 	@Bean
 	public CacheManager cacheManager() {
 
-		return new SpringRemoteCacheManager(new RemoteCacheManager(			
-				new ConfigurationBuilder()
-					.addServer().host("localhost")
-				.build()
-				));
+		return new SpringRemoteCacheManager(
+				new RemoteCacheManager(			
+					new ConfigurationBuilder()
+						.addServer()
+						.host("localhost")
+						.build()
+					)
+				);
 	}
 
 	@Override
