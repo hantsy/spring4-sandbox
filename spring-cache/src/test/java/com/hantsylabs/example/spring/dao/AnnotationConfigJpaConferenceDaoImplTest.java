@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.hantsylabs.example.spring.config.ConcurrentMapCacheConfig;
 import com.hantsylabs.example.spring.config.EhCacheConfig;
 import com.hantsylabs.example.spring.config.EhCacheJCacheConfig;
+import com.hantsylabs.example.spring.config.GemfireCacheConfig;
 import com.hantsylabs.example.spring.config.GuavaCacheConfig;
 import com.hantsylabs.example.spring.config.HazelcastCacheConfig;
 import com.hantsylabs.example.spring.config.InfinispanEmbeddedCacheConfig;
@@ -36,6 +37,7 @@ import com.hantsylabs.example.spring.model.Conference;
 		JpaConfig.class, //
 		HazelcastCacheConfig.class,//
 		ConcurrentMapCacheConfig.class, //
+		GemfireCacheConfig.class, //
 		RedisCacheConfig.class,//
 		EhCacheConfig.class, //
 		EhCacheJCacheConfig.class, //
