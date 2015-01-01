@@ -2,6 +2,7 @@ package com.hantsylabs.example.spring.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -14,7 +15,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
 @Profile("map")
-public class ConcurrentMapCacheConfig implements CachingConfigurer {
+public class ConcurrentMapCacheConfig extends CachingConfigurerSupport{
 
 	@Override
 	@Bean

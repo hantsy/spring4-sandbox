@@ -6,6 +6,7 @@ import org.infinispan.manager.DefaultCacheManager;
 import org.infinispan.spring.provider.SpringEmbeddedCacheManager;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
@@ -17,7 +18,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
 @Profile("infinispan-embedded")
-public class InfinispanEmbeddedCacheConfig implements CachingConfigurer {
+public class InfinispanEmbeddedCacheConfig extends CachingConfigurerSupport {
 
 	@Override
 	@Bean

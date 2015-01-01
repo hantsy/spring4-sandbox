@@ -5,6 +5,7 @@ import org.infinispan.client.hotrod.configuration.ConfigurationBuilder;
 import org.infinispan.spring.provider.SpringRemoteCacheManager;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
 @Profile("infinispan-remote")
-public class InfinispanRemoteCacheConfig implements CachingConfigurer {
+public class InfinispanRemoteCacheConfig extends CachingConfigurerSupport {
 
 	@Override
 	@Bean

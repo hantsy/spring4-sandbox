@@ -2,6 +2,7 @@ package com.hantsylabs.example.spring.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
@@ -19,7 +20,7 @@ import com.hazelcast.spring.cache.HazelcastCacheManager;
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
 @Profile("hz")
-public class HazelcastCacheConfig implements CachingConfigurer {
+public class HazelcastCacheConfig extends CachingConfigurerSupport {
 
 	@Override
 	@Bean

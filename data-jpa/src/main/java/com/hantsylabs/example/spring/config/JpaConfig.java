@@ -5,6 +5,7 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.hibernate.ejb.HibernatePersistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -33,7 +34,7 @@ public class JpaConfig {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		emf.setDataSource(dataSource());
 		emf.setPackagesToScan("com.hantsylabs.example.spring.model");
-		emf.setPersistenceProvider(new HibernatePersistence());
+		emf.setPersistenceProvider(new HibernatePersistenceProvider());
 		emf.setJpaProperties(jpaProperties());
 		return emf;
 	}

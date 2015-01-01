@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
@@ -23,7 +24,7 @@ import com.hantsylabs.example.spring.model.Conference;
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
 @Profile("gemfire")
-public class GemfireCacheConfig implements CachingConfigurer {
+public class GemfireCacheConfig extends CachingConfigurerSupport{
 	
 	@Bean
 	CacheFactoryBean cacheFactoryBean() {
