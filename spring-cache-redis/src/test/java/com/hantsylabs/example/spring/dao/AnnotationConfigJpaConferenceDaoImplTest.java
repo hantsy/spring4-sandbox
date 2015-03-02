@@ -15,32 +15,24 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.JobParametersBuilder;
-import org.springframework.batch.core.JobParametersInvalidException;
-import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
-import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
-import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.config.JobConfiguration;
-import com.hantsylabs.example.spring.config.JpaBatchConfig;
 import com.hantsylabs.example.spring.config.JpaConfig;
+import com.hantsylabs.example.spring.config.RedisCacheConfig;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, JpaBatchConfig.class, JobConfiguration.class })
-@TransactionConfiguration()
-public class JpaBatchTest {
+@ContextConfiguration(classes = { 
+		JpaConfig.class, //
+		RedisCacheConfig.class,//
+		})
+public class AnnotationConfigJpaConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
-			.getLogger(JpaBatchTest.class);
+			.getLogger(AnnotationConfigJpaConferenceDaoImplTest.class);
 
 	@Autowired
 	ConferenceDao conferenceDao;
@@ -58,15 +50,15 @@ public class JpaBatchTest {
 	@Transactional
 	public void beforeTestCase() {
 		log.debug("===================before test=====================");
-		Long id = conferenceDao.save(newConference());
-		assertTrue(id != null);
+
+		conferenceDao.deleteAll();
 	}
 
 	@After
 	@Transactional
 	public void afterTestCase() {
 		log.debug("===================after test=====================");
-		conferenceDao.deleteAll();
+
 	}
 
 	private Conference newConference() {
@@ -91,30 +83,32 @@ public class JpaBatchTest {
 		return conf;
 	}
 
-
-	@Autowired
-	private Job validJob;
-
-	@Autowired
-	private JobLauncher jobLauncher;
-
 	@Test
-	//@Transactional
-	public void jobTest() {
-		//Long id = conferenceDao.save(newConference());
-		JobParametersBuilder builder=new JobParametersBuilder();
-		try {
-			jobLauncher.run(validJob, builder.toJobParameters());
-		} catch (JobExecutionAlreadyRunningException | JobRestartException
-				| JobInstanceAlreadyCompleteException
-				| JobParametersInvalidException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	@Transactional
+	public void retrieveConference() {
 
-		Conference conf = conferenceDao.findById(1L);
+		Long id = conferenceDao.save(newConference());
 
-		log.debug("conf@" + conf);
+		entityManager.flush();
+		assertTrue(id != null);
+		log.debug("id @=" + id);
+		Conference conference = conferenceDao.findById(id);
+
+		assertTrue(conference != null);
+
+		assertTrue("JUD2013".equals(conference.getName()));
+
+		// query by slug
+		conference = conferenceDao.findBySlug("jud-2013");
+
+		assertTrue(conference != null);
+
+		assertTrue("JUD2013".equals(conference.getName()));
+
+		log.debug("@@@@@@@@@@@@@@loading from cache@@@@@@@@@@@@@@@@@@@@");
+
+		Conference conference2 = conferenceDao.findById(conference.getId());
+		assertTrue(conference2 != null);
 	}
 
 }
