@@ -19,7 +19,6 @@ import com.hazelcast.spring.cache.HazelcastCacheManager;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("hz")
 public class HazelcastCacheConfig extends CachingConfigurerSupport {
 
 	@Override

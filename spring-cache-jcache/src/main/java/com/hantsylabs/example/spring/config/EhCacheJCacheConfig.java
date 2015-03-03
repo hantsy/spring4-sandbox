@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("ehcache-jcache")
 public class EhCacheJCacheConfig extends CachingConfigurerSupport {
 
 	@Override

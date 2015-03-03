@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("infinispan-remote")
 public class InfinispanRemoteCacheConfig extends CachingConfigurerSupport {
 
 	@Override

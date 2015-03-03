@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("map")
 public class ConcurrentMapCacheConfig extends CachingConfigurerSupport{
 
 	@Override

@@ -18,7 +18,6 @@ import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("redis")
 public class RedisCacheConfig extends CachingConfigurerSupport {
 
 	@Override

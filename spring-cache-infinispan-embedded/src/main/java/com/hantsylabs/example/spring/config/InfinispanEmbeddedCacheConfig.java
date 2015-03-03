@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("infinispan-embedded")
 public class InfinispanEmbeddedCacheConfig extends CachingConfigurerSupport {
 
 	@Override

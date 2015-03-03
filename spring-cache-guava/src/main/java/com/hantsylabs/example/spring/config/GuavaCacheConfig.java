@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching(mode = AdviceMode.ASPECTJ)
-@Profile("guava")
 public class GuavaCacheConfig extends CachingConfigurerSupport{
 
 	@Override
