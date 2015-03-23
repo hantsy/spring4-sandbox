@@ -28,13 +28,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.config.JobConfiguration;
-import com.hantsylabs.example.spring.config.JpaBatchConfig;
+import com.hantsylabs.example.spring.config.JobConfig;
+import com.hantsylabs.example.spring.config.JpaBatchConfigurer;
 import com.hantsylabs.example.spring.config.JpaConfig;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, JpaBatchConfig.class, JobConfiguration.class })
+@ContextConfiguration(classes = { JpaConfig.class, JpaBatchConfigurer.class, JobConfig.class })
 public class AnnotationConfigJpaConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory

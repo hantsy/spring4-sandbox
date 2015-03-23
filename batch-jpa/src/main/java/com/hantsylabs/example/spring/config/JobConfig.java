@@ -4,12 +4,9 @@ package com.hantsylabs.example.spring.config;
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import javax.transaction.TransactionManager;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -18,10 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.jdbc.datasource.init.DataSourceInitializer;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import com.hantsylabs.example.spring.job.ConferenceItemReader;
 import com.hantsylabs.example.spring.job.ConferenceItemWriter;
@@ -32,7 +27,7 @@ import com.hantsylabs.example.spring.model.Conference;
  */
 @Configuration
 //@EnableBatchProcessing
-public class JobConfiguration {
+public class JobConfig {
 
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;

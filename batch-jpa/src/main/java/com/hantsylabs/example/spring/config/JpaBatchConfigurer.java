@@ -26,9 +26,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 
 @Configuration
-public class JpaBatchConfig implements BatchConfigurer {
+public class JpaBatchConfigurer implements BatchConfigurer {
 	private static final Logger logger = LoggerFactory
-			.getLogger(DefaultBatchConfigurer.class);
+			.getLogger(JpaBatchConfigurer.class);
 
 	@Autowired
 	private DataSource dataSource;
@@ -40,7 +40,7 @@ public class JpaBatchConfig implements BatchConfigurer {
 	private JobExplorer jobExplorer;
 
 
-	protected JpaBatchConfig() {
+	protected JpaBatchConfigurer() {
 	}
 
 
