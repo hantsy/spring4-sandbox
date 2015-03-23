@@ -21,6 +21,7 @@ import org.springframework.data.mongodb.repository.support.*;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.hantsylabs.example.spring.config.MongoConfig;
 import com.hantsylabs.example.spring.model.Address;
 import com.hantsylabs.example.spring.model.Conference;
 import com.hantsylabs.example.spring.model.QConference;
@@ -33,7 +34,7 @@ import com.mysema.query.BooleanBuilder;
 import com.mysema.query.mongodb.JoinBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:/com/hantsylabs/example/spring/config/applicationContext-mongo.xml")
+@ContextConfiguration(classes = MongoConfig.class)
 public class ConferencRepositoryImplTest {
 	private static final Logger log = LoggerFactory
 			.getLogger(ConferencRepositoryImplTest.class);
@@ -109,14 +110,14 @@ public class ConferencRepositoryImplTest {
 		log.debug("==================before test case=========================");
 		signupRepository.deleteAll();
 		conferenceRepository.deleteAll();
-		//conferenceRepository.save(newConference());
+		// conferenceRepository.save(newConference());
 	}
 
 	@After
 	public void afterTestCase() {
 		log.debug("==================after test case=========================");
-//		signupRepository.deleteAll();
-//		conferenceRepository.deleteAll();
+		// signupRepository.deleteAll();
+		// conferenceRepository.deleteAll();
 	}
 
 	@Test
@@ -136,7 +137,7 @@ public class ConferencRepositoryImplTest {
 				.findByAddressCountry("CN");
 		log.debug("findByAddressCountry@" + confs.size());
 		assertTrue(1 == confs.size());
-		
+
 		Conference conference2 = newConference();
 		conference2.setSlug("test-jud");
 		conference2.setName("Test JUD");
@@ -288,21 +289,24 @@ public class ConferencRepositoryImplTest {
 		log.debug("signup @" + signup);
 
 		// TODO does not work as expected.
-		
-		List<Signup> signups1=mongoTemplate.find(Query.query(Criteria.where("conference").is(conf)), Signup.class);
+
+		List<Signup> signups1 = mongoTemplate.find(
+				Query.query(Criteria.where("conference").is(conf)),
+				Signup.class);
 		log.debug("signups1.size()@" + signups1.size());
 		assertTrue(1 == signups1.size());
-		
-//		QSignup qsignup = QSignup.signup;
-//		QConference qconf = QConference.conference;
-//		
-//		BooleanBuilder booleanBuilder=new BooleanBuilder();
-//		booleanBuilder.and(qsignup.conference.id.eq(conf.getId()));
-//		
-//		
-//		List<Signup> signups = (List<Signup>) signupRepository.findAll(booleanBuilder);
-//	
-//		log.debug("signups.size()@" + signups.size());
-//		assertTrue(1 == signups.size());
+
+		// QSignup qsignup = QSignup.signup;
+		// QConference qconf = QConference.conference;
+		//
+		// BooleanBuilder booleanBuilder=new BooleanBuilder();
+		// booleanBuilder.and(qsignup.conference.id.eq(conf.getId()));
+		//
+		//
+		// List<Signup> signups = (List<Signup>)
+		// signupRepository.findAll(booleanBuilder);
+		//
+		// log.debug("signups.size()@" + signups.size());
+		// assertTrue(1 == signups.size());
 	}
 }

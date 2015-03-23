@@ -21,6 +21,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hantsylabs.example.spring.config.JpaConfig;
 import com.hantsylabs.example.spring.jpa.AuditorBean;
 import com.hantsylabs.example.spring.jpa.ConferenceRepository;
 import com.hantsylabs.example.spring.jpa.SignupRepository;
@@ -32,7 +33,7 @@ import com.hantsylabs.example.spring.model.Status;
 import com.hantsylabs.example.spring.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:/com/hantsylabs/example/spring/config/applicationContext-jpa.xml")
+@ContextConfiguration(classes=JpaConfig.class)
 @TransactionConfiguration()
 public class ConferenceTest {
 	private static final Logger log = LoggerFactory

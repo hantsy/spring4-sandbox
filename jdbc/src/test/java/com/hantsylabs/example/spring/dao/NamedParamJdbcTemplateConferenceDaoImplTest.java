@@ -17,11 +17,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hantsylabs.example.spring.config.JdbcConfig;
 import com.hantsylabs.example.spring.jdbc.NamedParamJdbcTemplateConferenceDaoImpl;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:/com/hantsylabs/example/spring/config/applicationContext-jdbc.xml")
+@ContextConfiguration(classes=JdbcConfig.class)
 public class NamedParamJdbcTemplateConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
