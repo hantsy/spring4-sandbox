@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.hantsylabs.example.spring.model.Conference;
 
-//@Service
+@Service
 public class ConferenceService {
-
+	
 	@Autowired
-	List<Conference> confs;
+	List<Conference> confs;	
 
 	public List<Conference> availableConferences() {
-		return this.confs;
+		return this.confs;	
 	}
 
 }
