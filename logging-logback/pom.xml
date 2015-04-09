@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>logging</artifactId>
+	<artifactId>logging-logback</artifactId>
 	<packaging>jar</packaging>
-	<name>logging</name>
+	<name>logging-logback</name>
 	<parent>
 		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>
@@ -28,6 +28,11 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
 		</dependency>
 
 		<dependency>
@@ -75,81 +80,6 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
-
-
 	</dependencies>
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>**/*.xls</exclude>
-				</excludes>
-				<filtering>true</filtering>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.xls</include>
-				</includes>
-				<filtering>false</filtering>
-			</resource>
-		</resources>
-	</build>
-
-	<profiles>
-		<profile>
-			<id>log4j</id>
-			<dependencies>
-				<dependency>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</dependency>
-			</dependencies>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources-log4j</directory>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-
-		<profile>
-			<id>mongodb-log4j</id>
-			<dependencies>
-				<dependency>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.data</groupId>
-					<artifactId>spring-data-mongodb-log4j</artifactId>
-				</dependency>
-			</dependencies>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources-mongodb-log4j</directory>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-		<profile>
-			<id>logback</id>
-			<dependencies>
-				<dependency>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-classic</artifactId>
-				</dependency>
-			</dependencies>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources-logback</directory>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-	</profiles>
+	
 </project>

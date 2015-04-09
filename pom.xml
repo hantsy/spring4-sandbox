@@ -33,7 +33,10 @@
 		<module>spring-cache-jcache</module>
 		<module>spring-cache-redis</module>
 		<module>spring-jcache</module>
-		<module>logging</module>
+		<module>logging-log4j</module>
+		<module>logging-log4j2</module>
+		<module>logging-logback</module>
+		<module>logging-mongo</module>
 		<module>batch-jpa</module>
 	</modules>
 	<properties>
