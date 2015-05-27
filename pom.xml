@@ -48,7 +48,7 @@
 		<slf4j.version>1.7.7</slf4j.version>
 		<querydsl.version>3.6.3</querydsl.version>
 		<mongo-java-driver.version>2.12.2</mongo-java-driver.version>
-		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring.version>4.2.0.RC1</spring.version>
 		<spring.batch.version>3.0.4.RELEASE</spring.batch.version>
 		<spring-webflow.version>2.4.1.RELEASE</spring-webflow.version>
 		<spring-security.version>4.0.1.RELEASE</spring-security.version>
@@ -96,39 +96,66 @@
 		<dependencies>
 
 			<!-- Spring IO Platform BOM -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>io.spring.platform</groupId>
 				<artifactId>platform-bom</artifactId>
 				<version>1.1.2.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
+			</dependency> -->
 
 
 			<!-- Spring BOM -->
-			<!-- <dependency>
+			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
 				<version>${spring.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency> -->
+			</dependency>
 
 			<!-- Spring Data -->
-			<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-releasetrain</artifactId> 
-				<version>Dijkstra-SR1</version> <type>pom</type> <scope>import</scope> </dependency> -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-releasetrain</artifactId>
+				<version>Fowler-RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
 			<!-- Spring security -->
-			<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-core</artifactId> 
-				<version>${spring-security.version}</version> <exclusions> <exclusion> <groupId>commons-logging</groupId> 
-				<artifactId>commons-logging</artifactId> </exclusion> </exclusions> </dependency> 
-				<dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-config</artifactId> 
-				<version>${spring-security.version}</version> <exclusions> <exclusion> <groupId>commons-logging</groupId> 
-				<artifactId>commons-logging</artifactId> </exclusion> </exclusions> </dependency> 
-				<dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-web</artifactId> 
-				<version>${spring-security.version}</version> </dependency> <dependency> 
-				<groupId>org.springframework.security</groupId> <artifactId>spring-security-taglibs</artifactId> 
-				<version>${spring-security.version}</version> </dependency> -->
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring-security.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring-security.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-taglibs</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
 
 			<!--java ee 7 facilities -->
 			<dependency>
