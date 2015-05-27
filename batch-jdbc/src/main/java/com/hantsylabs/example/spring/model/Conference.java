@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
@@ -17,6 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Table(name="conference")
 public class Conference {
 
 	@Id
@@ -51,14 +53,6 @@ public class Conference {
 	@NotNull
 	@Column(name = "slug")
 	private String slug;
-	
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return this.name;
@@ -100,6 +94,19 @@ public class Conference {
 		this.slug = slug;
 	}
 
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this,
+				ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Integer getVersion() {
 		return this.version;
@@ -108,11 +115,4 @@ public class Conference {
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
-	
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this,
-				ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
 }

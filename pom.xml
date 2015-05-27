@@ -38,6 +38,7 @@
 		<module>logging-logback</module>
 		<module>logging-mongo</module>
 		<module>batch-jpa</module>
+		<module>batch-jdbc</module>
 	</modules>
 	<properties>
 		<aspectj.version>1.8.4</aspectj.version>
@@ -48,7 +49,7 @@
 		<querydsl.version>3.6.3</querydsl.version>
 		<mongo-java-driver.version>2.12.2</mongo-java-driver.version>
 		<spring.version>4.1.6.RELEASE</spring.version>
-		<spring.batch.version>3.0.3.RELEASE</spring.batch.version>
+		<spring.batch.version>3.0.4.RELEASE</spring.batch.version>
 		<spring-webflow.version>2.4.1.RELEASE</spring-webflow.version>
 		<spring-security.version>4.0.1.RELEASE</spring-security.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
