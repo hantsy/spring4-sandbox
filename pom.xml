@@ -20,6 +20,7 @@
 		<module>data-mongo</module>
 		<module>data-mongo-audit</module>
 		<module>data-mongo-crossstore</module>
+		<module>data-rest</module>
 		<module>jpa-audit</module>
 		<module>jpa-revision</module>
 		<module>jpa-cache</module>
@@ -96,13 +97,13 @@
 		<dependencies>
 
 			<!-- Spring IO Platform BOM -->
-			<!-- <dependency>
+			<dependency>
 				<groupId>io.spring.platform</groupId>
 				<artifactId>platform-bom</artifactId>
 				<version>1.1.2.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency> -->
+			</dependency>
 
 
 			<!-- Spring BOM -->
