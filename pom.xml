@@ -23,16 +23,16 @@
 		<module>jpa-audit</module>
 		<module>jpa-revision</module>
 		<module>jpa-cache</module>
-		<module>spring-cache-concurrentmap</module>
-		<module>spring-cache-ehcache</module>
-		<module>spring-cache-gemfire</module>
-		<module>spring-cache-guava</module>
-		<module>spring-cache-hazelcast</module>
-		<module>spring-cache-infinispan-embedded</module>
-		<module>spring-cache-infinispan-remote</module>
-		<module>spring-cache-jcache</module>
-		<module>spring-cache-redis</module>
-		<module>spring-jcache</module>
+		<module>cache-concurrentmap</module>
+		<module>cache-ehcache</module>
+		<module>cache-gemfire</module>
+		<module>cache-guava</module>
+		<module>cache-hazelcast</module>
+		<module>cache-infinispan-embedded</module>
+		<module>cache-infinispan-remote</module>
+		<module>cache-jcache</module>
+		<module>cache-redis</module>
+		<module>jcache</module>
 		<module>logging-log4j</module>
 		<module>logging-log4j2</module>
 		<module>logging-logback</module>
