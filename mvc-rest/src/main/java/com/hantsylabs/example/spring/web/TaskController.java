@@ -62,13 +62,16 @@ public class TaskController {
 		task = taskRepository.save(task);
 
 		HttpHeaders headers = new HttpHeaders();
-		headers.add(HttpHeaders.LOCATION, ServletUriComponentsBuilder
-				.fromCurrentContextPath().path("/api/tasks/{id}")
-				.buildAndExpand(task.getId()).toUriString());
+		headers.setLocation(ServletUriComponentsBuilder
+				.fromCurrentContextPath()
+				.path("/api/tasks/{id}")
+				.buildAndExpand(task.getId())
+				.toUri());
+		
 		return new ResponseEntity<Task>(HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers="!action")
 	public ResponseEntity<Task> updateTask(@PathVariable("id") Long id,
 			@RequestBody TaskForm fm) {
 
@@ -149,7 +152,6 @@ public class TaskController {
 		if (task == null) {
 			throw new TaskNotFoundException(id);
 		}
-
 
 		taskRepository.delete(id);
 
