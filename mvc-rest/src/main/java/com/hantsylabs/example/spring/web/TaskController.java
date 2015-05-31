@@ -24,6 +24,11 @@ import com.hantsylabs.example.spring.jpa.TaskRepository;
 import com.hantsylabs.example.spring.model.Status;
 import com.hantsylabs.example.spring.model.Task;
 
+/**
+ * 
+ * @author hantsy
+ *
+ */
 @RestController
 @RequestMapping(value = "/api/tasks")
 public class TaskController {

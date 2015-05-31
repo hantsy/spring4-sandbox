@@ -15,6 +15,7 @@
 		<module>jdbc</module>
 		<module>jpa</module>
 		<module>hibernate4</module>
+		<module>hibernate5</module>
 		<module>data-jpa</module>
 		<module>data-jpa-audit</module>
 		<module>data-mongo</module>
