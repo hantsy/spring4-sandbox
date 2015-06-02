@@ -42,6 +42,9 @@
 		<module>batch-jpa</module>
 		<module>batch-jdbc</module>
 		<module>mvc-rest</module>
+		<module>mvc-tiles3</module>
+		<module>mvc-thymeleaf</module>
+		<module>mvc-jsf2</module>
 	</modules>
 	<properties>
 		<aspectj.version>1.8.4</aspectj.version>
