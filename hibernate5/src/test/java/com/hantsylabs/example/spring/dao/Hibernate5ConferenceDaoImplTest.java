@@ -24,10 +24,10 @@ import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={HibernateConfig.class})
-public class Hibernate4ConferenceDaoImplTest {
+public class Hibernate5ConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory
-			.getLogger(Hibernate4ConferenceDaoImplTest.class);
+			.getLogger(Hibernate5ConferenceDaoImplTest.class);
 
 	@Autowired
 	ConferenceDao conferenceDao;

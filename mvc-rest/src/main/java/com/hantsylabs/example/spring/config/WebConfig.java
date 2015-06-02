@@ -35,12 +35,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 )
 public class WebConfig extends SpringDataWebConfiguration {
 
-    private static final Logger logger = LoggerFactory.getLogger(WebConfig.class);
-
-    @Inject
-    private ObjectMapper objectMapper;
-
-
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();

@@ -11,13 +11,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages={"com.hantsylabs.example.spring.dao","com.hantsylabs.example.spring.hibernate4"})
+@ComponentScan(basePackages={
+		"com.hantsylabs.example.spring.dao",
+		"com.hantsylabs.example.spring.hibernate5"})
 @EnableTransactionManagement(mode=AdviceMode.ASPECTJ)
 public class HibernateConfig {
 

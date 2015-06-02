@@ -15,7 +15,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.ResultSetExtractor;
-import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -65,10 +65,10 @@ public class JdbcConferenceDaoImpl extends JdbcDaoSupport implements
 				ps.setString(1, conference.getName());
 				ps.setString(2, conference.getSlug());
 				ps.setString(3, conference.getDescription());
-				ps.setTimestamp(4, new java.sql.Timestamp(
-						conference.getStartedDate().getTime()));
-				ps.setTimestamp(5, new java.sql.Timestamp(
-						conference.getEndedDate().getTime()));
+				ps.setTimestamp(4, new java.sql.Timestamp(conference
+						.getStartedDate().getTime()));
+				ps.setTimestamp(5, new java.sql.Timestamp(conference
+						.getEndedDate().getTime()));
 
 				return ps;
 			}
@@ -110,8 +110,7 @@ public class JdbcConferenceDaoImpl extends JdbcDaoSupport implements
 				conf.getId());
 	}
 
-	private class ConferenceMapper implements
-			ParameterizedRowMapper<Conference> {
+	private class ConferenceMapper implements RowMapper<Conference> {
 
 		@Override
 		public Conference mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -133,19 +132,19 @@ public class JdbcConferenceDaoImpl extends JdbcDaoSupport implements
 			log.debug("rows deleted @" + deleted);
 		}
 	}
-	
 
 	public Conference findBySlug1(String slug) {
 		List<Conference> confs = getJdbcTemplate().query(
 				"select * from conference where slug=?", new Object[] { slug },
-				new ResultSetExtractor<List<Conference>>(){
+				new ResultSetExtractor<List<Conference>>() {
 
 					@Override
 					public List<Conference> extractData(ResultSet rs)
 							throws SQLException, DataAccessException {
 						// TODO Auto-generated method stub
 						return null;
-					}});
+					}
+				});
 		if (!confs.isEmpty()) {
 			return confs.get(0);
 		}

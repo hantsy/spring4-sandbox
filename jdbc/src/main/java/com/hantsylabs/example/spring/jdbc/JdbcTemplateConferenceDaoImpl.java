@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
-import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
@@ -104,8 +104,7 @@ public class JdbcTemplateConferenceDaoImpl  implements
 				conf.getId());
 	}
 
-	private class ConferenceMapper implements
-			ParameterizedRowMapper<Conference> {
+	private class ConferenceMapper implements RowMapper<Conference>{
 
 		@Override
 		public Conference mapRow(ResultSet rs, int rowNum) throws SQLException {

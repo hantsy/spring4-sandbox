@@ -5,7 +5,7 @@
 	<artifactId>hibernate5</artifactId>
 	<packaging>jar</packaging>
 	<name>hibernate5</name>
-	<description>Using Hibernate4 API in Spring</description>
+	<description>Using Hibernate 5 API in Spring</description>
 	<parent>
 		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>

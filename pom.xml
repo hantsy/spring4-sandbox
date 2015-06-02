@@ -55,9 +55,12 @@
 		<spring.batch.version>3.0.4.RELEASE</spring.batch.version>
 		<spring-webflow.version>2.4.1.RELEASE</spring-webflow.version>
 		<spring-security.version>4.0.1.RELEASE</spring-security.version>
+		<spring-batch.version>3.0.3.RELEASE</spring-batch.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<hazelcast.version>3.2.3</hazelcast.version>
 		<infinispan.version>6.0.2.Final</infinispan.version>
+		<jackson.version>2.5.3</jackson.version>
+		<groovy.version>2.4.3</groovy.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -79,11 +82,15 @@
 			<name>jvnet-nexus-releases</name>
 			<url>https://maven.java.net/content/repositories/releases/</url>
 		</repository>
-		<!-- <repository> <id>io.spring.repo.maven.snapshot</id> <url>http://repo.spring.io/snapshot/</url> 
-			<snapshots> <enabled>true</enabled> </snapshots> </repository> <repository> 
-			<id>spring-roo-repository</id> <name>Spring Roo Repository</name> <url>http://spring-roo-repository.springsource.org/release</url> 
-			</repository> <repository> <id>prime-repo</id> <url>http://repository.primefaces.org</url> 
-			<name>PrimeFaces Maven Repository</name> </repository> -->
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -99,13 +106,8 @@
 		<dependencies>
 
 			<!-- Spring IO Platform BOM -->
-			<dependency>
-				<groupId>io.spring.platform</groupId>
-				<artifactId>platform-bom</artifactId>
-				<version>1.1.2.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+			<!-- <dependency> <groupId>io.spring.platform</groupId> <artifactId>platform-bom</artifactId> 
+				<version>1.1.2.RELEASE</version> <type>pom</type> <scope>import</scope> </dependency> -->
 
 
 			<!-- Spring BOM -->
@@ -160,6 +162,64 @@
 				<version>${spring-security.version}</version>
 			</dependency>
 
+			<!--Spring batch-->
+			 <dependency>
+                <groupId>org.springframework.batch</groupId>
+                <artifactId>spring-batch-core</artifactId>
+                <version>${spring-batch.version}</version>
+            </dependency>
+
+			<!--jackson -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			
+			<dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+			
+			<dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+			<!-- Groovy -->
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>2.4.3</version>
+			</dependency>
+			
+			<!-- Apache commons -->
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+			
 			<!--java ee 7 facilities -->
 			<dependency>
 				<groupId>javax.servlet</groupId>

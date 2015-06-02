@@ -1,8 +1,7 @@
-package com.hantsylabs.example.spring.hibernate4;
+package com.hantsylabs.example.spring.hibernate5;
 
 import java.util.List;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -14,9 +13,9 @@ import com.hantsylabs.example.spring.dao.ConferenceDao;
 import com.hantsylabs.example.spring.model.Conference;
 
 @Repository
-public class Hibernate4ConferenceDaoImpl implements ConferenceDao {
+public class Hibernate5ConferenceDaoImpl implements ConferenceDao {
 	private static final Logger log = LoggerFactory
-			.getLogger(Hibernate4ConferenceDaoImpl.class);
+			.getLogger(Hibernate5ConferenceDaoImpl.class);
 
 	@Autowired
 	SessionFactory sessionFactory;
