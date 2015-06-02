@@ -1,5 +1,6 @@
 package com.hantsylabs.example.spring.dao;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -80,9 +81,7 @@ public class TaskRepositoryImplTest {
 
 	@Test
 	public void retrieveTasks() throws Exception {
-
 		mvc.perform(get("/api/tasks")).andExpect(status().isOk());
-
 	}
 	
 	@Test
@@ -93,7 +92,18 @@ public class TaskRepositoryImplTest {
 		.andExpect(status().isOk())
 		.andExpect(content().contentType("application/json;charset=UTF-8"))
 		.andExpect(jsonPath("id").value(1));
-
+	}
+	
+	@Test
+	public void removeTask() throws Exception {
+		mvc.perform(
+				delete("/api/tasks/{id}", 1L))
+		.andExpect(status().isNoContent());
+		
+		mvc.perform(
+				get("/api/tasks/{id}", 1L)
+				.accept(MediaType.APPLICATION_JSON))
+		.andExpect(status().isNotFound());
 	}
 
 }
