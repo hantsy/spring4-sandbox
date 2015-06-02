@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 		"com.hantsylabs.example.spring.dao",
 		"com.hantsylabs.example.spring.hibernate5"})
 @EnableTransactionManagement(mode=AdviceMode.ASPECTJ)
-public class HibernateConfig {
+public class Hibernate5Config {
 
 	@Bean
 	public DataSource dataSource() {

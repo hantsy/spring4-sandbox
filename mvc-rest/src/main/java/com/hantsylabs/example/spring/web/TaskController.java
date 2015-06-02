@@ -137,6 +137,7 @@ public class TaskController {
 		}
 
 		TaskDetails details = new TaskDetails();
+		details.setId(task.getId());
 		details.setName(task.getName());
 		details.setDescription(task.getDescription());
 		details.setCreatedDate(task.getCreatedDate());

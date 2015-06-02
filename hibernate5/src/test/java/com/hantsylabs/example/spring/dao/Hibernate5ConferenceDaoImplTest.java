@@ -19,11 +19,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.config.HibernateConfig;
+import com.hantsylabs.example.spring.config.Hibernate5Config;
 import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={HibernateConfig.class})
+@ContextConfiguration(classes={Hibernate5Config.class})
 public class Hibernate5ConferenceDaoImplTest {
 
 	private static final Logger log = LoggerFactory

@@ -8,10 +8,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class TaskDetails implements Serializable {
 
+	private Long id;
 	private String name;
 	private String description;
 	private Date createdDate;
 	private Date lastModifiedDate;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;

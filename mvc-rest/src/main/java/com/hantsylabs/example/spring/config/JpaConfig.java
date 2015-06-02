@@ -19,7 +19,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "com.hantsylabs.example.spring.jpa" })
+//@ComponentScan(basePackages = { "com.hantsylabs.example.spring" })
 @EnableJpaRepositories(basePackages = { "com.hantsylabs.example.spring.jpa" })
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
 public class JpaConfig {
