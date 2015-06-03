@@ -65,6 +65,9 @@
 		<jackson.version>2.5.3</jackson.version>
 		<groovy.version>2.4.3</groovy.version>
 		<tiles.version>3.0.5</tiles.version>
+
+		<!-- Thymeleaf -->
+		<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -469,8 +472,6 @@
 				</exclusions>
 			</dependency>
 
-			<!--Apache Commons -->
-
 			<dependency>
 				<groupId>commons-collections</groupId>
 				<artifactId>commons-collections</artifactId>
@@ -481,6 +482,8 @@
 				<artifactId>commons-pool</artifactId>
 				<version>1.5.6</version>
 			</dependency>
+
+
 
 
 			<dependency>
@@ -504,6 +507,18 @@
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>2.1</version>
+			</dependency>
+
+			<!-- THYMELEAF -->
+			<dependency>
+				<groupId>org.thymeleaf</groupId>
+				<artifactId>thymeleaf</artifactId>
+				<version>${thymeleaf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.thymeleaf</groupId>
+				<artifactId>thymeleaf-spring4</artifactId>
+				<version>${thymeleaf.version}</version>
 			</dependency>
 
 			<!--AspectJ -->

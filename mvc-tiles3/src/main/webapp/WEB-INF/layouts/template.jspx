@@ -12,7 +12,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Spring MVC with Apache Tiles 3</title>
-			 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 		</head>
 		<body>
 			<div id="header"><tiles:insertAttribute name="header"/></div>
