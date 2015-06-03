@@ -13,11 +13,14 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.hantsylabs.example.spring.jpa.TaskRepository;
@@ -29,8 +32,8 @@ import com.hantsylabs.example.spring.model.Task;
  * @author hantsy
  *
  */
-@RestController
-@RequestMapping(value = "/api/tasks")
+@Controller
+@RequestMapping(value = "/tasks")
 public class TaskController {
 	private static final Logger log = LoggerFactory
 			.getLogger(TaskController.class);
@@ -39,7 +42,7 @@ public class TaskController {
 	private TaskRepository taskRepository;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public ResponseEntity<List<TaskDetails>> allTask() {
+	public String allTask(ModelMap model) {
 
 		List<TaskDetails> detailsList = new ArrayList<>();
 
@@ -55,29 +58,24 @@ public class TaskController {
 			detailsList.add(details);
 		}
 
-		return new ResponseEntity<>(detailsList, HttpStatus.OK);
+		model.addAttribute("tasks", detailsList);
+		
+		return "tasks";
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public ResponseEntity<Task> createTask(@RequestBody TaskForm fm) {
+	public String createTask(@RequestBody TaskForm fm) {
 		Task task = new Task();
 		task.setName(fm.getName());
 		task.setDescription(fm.getDescription());
 
 		task = taskRepository.save(task);
 
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ServletUriComponentsBuilder
-				.fromCurrentContextPath()
-				.path("/api/tasks/{id}")
-				.buildAndExpand(task.getId())
-				.toUri());
-		
-		return new ResponseEntity<Task>(HttpStatus.CREATED);
+		return "redirect:/tasks";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers="!action")
-	public ResponseEntity<Task> updateTask(@PathVariable("id") Long id,
+	public String updateTask(@PathVariable("id") Long id,
 			@RequestBody TaskForm fm) {
 
 		Task task = taskRepository.findOne(id);
@@ -91,11 +89,11 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return "redirect:/tasks";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "action=MARK_DOING")
-	public ResponseEntity<Task> markTaskDoing(@PathVariable("id") Long id) {
+	public String markTaskDoing(@PathVariable("id") Long id) {
 
 		Task task = taskRepository.findOne(id);
 
@@ -107,11 +105,11 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return "redirect:/tasks";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "action=MARK_DONE")
-	public ResponseEntity<Task> markTaskDone(@PathVariable("id") Long id) {
+	public String markTaskDone(@PathVariable("id") Long id) {
 
 		Task task = taskRepository.findOne(id);
 
@@ -123,12 +121,13 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return "redirect:/tasks";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<TaskDetails> getTask(
-			@PathVariable("id") @NotNull Long id) {
+	public String getTask(
+			@PathVariable("id") @NotNull Long id, 
+			ModelMap model) {
 
 		Task task = taskRepository.findOne(id);
 
@@ -146,12 +145,14 @@ public class TaskController {
 		if (log.isDebugEnabled()) {
 			log.debug("task details@" + details);
 		}
+		
+		model.addAttribute("details", details);
 
-		return new ResponseEntity<TaskDetails>(details, HttpStatus.OK);
+		return "details";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Task> deleteTask(@PathVariable("id") Long id) {
+	public String deleteTask(@PathVariable("id") Long id) {
 
 		Task task = taskRepository.findOne(id);
 
@@ -161,7 +162,7 @@ public class TaskController {
 
 		taskRepository.delete(id);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return "redirect:/tasks";
 	}
 
 }

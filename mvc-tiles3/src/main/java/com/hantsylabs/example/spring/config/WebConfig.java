@@ -43,8 +43,11 @@ public class WebConfig extends SpringDataWebConfiguration {
 
     @Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		// TODO Auto-generated method stub
-		super.addViewControllers(registry);
+    	registry.addRedirectViewController("/", "/tasks");
+		registry
+			.addViewController("/add")
+			.setViewName("add");
+		
 	}
 
 

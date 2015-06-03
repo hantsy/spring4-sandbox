@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="default" template="/WEB-INF/layouts/template.jspx">
+		<put-attribute name="header" value="/WEB-INF/layouts/header.jspx" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layouts/footer.jspx" />
+	</definition>
+	<definition name="tasks" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/tasks.jspx" />
+	</definition>
+	<definition name="add" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/add.jspx" />
+	</definition>
+	<definition name="edit" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/edit.jspx" />
+	</definition>
+	<definition name="details" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/details.jspx" />
+	</definition>
+</tiles-definitions>

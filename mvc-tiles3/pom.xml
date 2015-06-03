@@ -91,6 +91,20 @@
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-extras</artifactId>
 			<version>${tiles.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tiles</groupId>
+					<artifactId>tiles-freemarker</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tiles</groupId>
+					<artifactId>tiles-velocity</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tiles</groupId>
+					<artifactId>tiles-request-mustache</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!--jackson -->
@@ -204,6 +218,17 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>	
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
