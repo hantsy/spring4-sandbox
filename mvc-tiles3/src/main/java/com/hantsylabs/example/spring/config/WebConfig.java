@@ -1,9 +1,6 @@
 package com.hantsylabs.example.spring.config;
 
-import javax.inject.Inject;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
 @Configuration
 @EnableWebMvc
@@ -39,8 +38,42 @@ public class WebConfig extends SpringDataWebConfiguration {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+    
+    
 
     @Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		// TODO Auto-generated method stub
+		super.addViewControllers(registry);
+	}
+
+
+
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		registry
+			.tiles();
+	}
+	
+	@Bean
+	public TilesConfigurer tilesConfiguer() {
+		TilesConfigurer config=new TilesConfigurer();
+		config.setDefinitions("/WEB-INF/tiles/definitions.xml");
+		return config;	
+	}
+
+
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry
+			.addResourceHandler("webjars/**")
+	        .addResourceLocations("classpath:META-INF/resources/webjars/");
+	}
+
+
+
+	@Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.favorParameter(false);
         configurer.favorPathExtension(false);
