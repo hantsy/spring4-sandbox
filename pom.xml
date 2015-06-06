@@ -212,6 +212,18 @@
 				<artifactId>json-path</artifactId>
 				<version>2.0.0</version>
 			</dependency>
+			
+			<!--AspectJ -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
 
 			<!-- Groovy -->
 			<dependency>
@@ -227,6 +239,10 @@
 				<version>3.1.0</version>
 				<scope>provided</scope>
 			</dependency>
+			
+			
+			<!--Legacy JSP dependencies-->
+			<!--Tomcat includes jsp-api, el-api and a jasper el impl-->
 			<dependency>
 				<groupId>javax.servlet.jsp</groupId>
 				<artifactId>jsp-api</artifactId>
@@ -234,10 +250,29 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>jstl</artifactId>
+				<groupId>javax.servlet.jsp.jstl</groupId>
+				<artifactId>jstl-api</artifactId>
 				<version>1.2</version>
 			</dependency>
+			<dependency>
+				<groupId>org.glassfish.web</groupId>
+				<artifactId>jstl-impl</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.el</groupId>
+				<artifactId>el-api</artifactId>
+				<version>2.2</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.web</groupId>
+				<artifactId>el-impl</artifactId>
+				<version>2.2.1-b05</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<!--JTA-->
 			<dependency>
 				<groupId>javax.transaction</groupId>
 				<artifactId>javax.transaction-api</artifactId>
@@ -521,17 +556,7 @@
 				<version>${thymeleaf.version}</version>
 			</dependency>
 
-			<!--AspectJ -->
-			<dependency>
-				<groupId>org.aspectj</groupId>
-				<artifactId>aspectjrt</artifactId>
-				<version>${aspectj.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.aspectj</groupId>
-				<artifactId>aspectjweaver</artifactId>
-				<version>${aspectj.version}</version>
-			</dependency>
+
 
 			<!--test -->
 			<dependency>
