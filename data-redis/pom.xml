@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>data-keyvalue</artifactId>
+	<artifactId>data-redis</artifactId>
 	<packaging>jar</packaging>
-	<name>data-keyvalue</name>
+	<name>data-redis</name>
 	<parent>
 		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>
@@ -77,11 +77,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-keyvalue</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
@@ -132,7 +127,7 @@
 
 		<dependency>
 			<groupId>com.mysema.querydsl</groupId>
-			<artifactId>querydsl-collections</artifactId>
+			<artifactId>querydsl-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>commons-pool</groupId>

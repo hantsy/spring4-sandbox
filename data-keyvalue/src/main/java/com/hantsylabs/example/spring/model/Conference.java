@@ -1,62 +1,46 @@
 package com.hantsylabs.example.spring.model;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
+import org.springframework.data.keyvalue.annotation.KeySpace;
 
-@Entity
-@NamedQuery(name = "Conference.searchByMyNamedQuery", query = "from Conference where name=?")
+@KeySpace(value="conferences")
 public class Conference {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Long id;
-
+	
 	@Version
-	@Column(name = "version")
-	private Integer version;
+	private Long version;
 
 	@NotNull
 	private String name;
 
-	@NotNull
 	private String description;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
-	private Date startedDate;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
-	private Date endedDate;
 
 	@NotNull
 	private String slug;
 	
-	private Address address;
+	@CreatedDate
+	private Date createdDate;	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "conference")
-	private Set<Signup> signups = new HashSet<Signup>();
 
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
 	public String getName() {
 		return this.name;
 	}
@@ -73,22 +57,6 @@ public class Conference {
 		this.description = description;
 	}
 
-	public Date getStartedDate() {
-		return this.startedDate;
-	}
-
-	public void setStartedDate(Date startedDate) {
-		this.startedDate = startedDate;
-	}
-
-	public Date getEndedDate() {
-		return this.endedDate;
-	}
-
-	public void setEndedDate(Date endedDate) {
-		this.endedDate = endedDate;
-	}
-
 	public String getSlug() {
 		return this.slug;
 	}
@@ -98,49 +66,26 @@ public class Conference {
 	}
 
 
-	public Address getAddress() {
-		return address;
+	public Long getVersion() {
+		return version;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this,
 				ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
-
-	public Set<Signup> getSignups() {
-		return signups;
-	}
-
-	public void setSignups(Set<Signup> signups) {
-		this.signups = signups;
-	}
-
-	public void addSignup(Signup newSignup) {
-		if(!signups.contains(newSignup)){
-			this.signups.add(newSignup);
-			newSignup.setConference(this);
-		}
 	}
 
 }

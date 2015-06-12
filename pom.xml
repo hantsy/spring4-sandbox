@@ -22,6 +22,9 @@
 		<module>data-mongo-audit</module>
 		<module>data-mongo-crossstore</module>
 		<module>data-rest</module>
+		<module>data-keyvalue</module>
+		<module>data-redis</module>
+		<module>data-elasticsearch</module>
 		<module>jpa-audit</module>
 		<module>jpa-revision</module>
 		<module>jpa-cache</module>
@@ -212,7 +215,7 @@
 				<artifactId>json-path</artifactId>
 				<version>2.0.0</version>
 			</dependency>
-			
+
 			<!--AspectJ -->
 			<dependency>
 				<groupId>org.aspectj</groupId>
@@ -239,10 +242,10 @@
 				<version>3.1.0</version>
 				<scope>provided</scope>
 			</dependency>
-			
-			
-			<!--Legacy JSP dependencies-->
-			<!--Tomcat includes jsp-api, el-api and a jasper el impl-->
+
+
+			<!--Legacy JSP dependencies -->
+			<!--Tomcat includes jsp-api, el-api and a jasper el impl -->
 			<dependency>
 				<groupId>javax.servlet.jsp</groupId>
 				<artifactId>jsp-api</artifactId>
@@ -271,8 +274,8 @@
 				<version>2.2.1-b05</version>
 				<scope>provided</scope>
 			</dependency>
-			
-			<!--JTA-->
+
+			<!--JTA -->
 			<dependency>
 				<groupId>javax.transaction</groupId>
 				<artifactId>javax.transaction-api</artifactId>
@@ -440,6 +443,12 @@
 
 			<dependency>
 				<groupId>com.mysema.querydsl</groupId>
+				<artifactId>querydsl-collections</artifactId>
+				<version>${querydsl.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mysema.querydsl</groupId>
 				<artifactId>querydsl-mongodb</artifactId>
 				<version>${querydsl.version}</version>
 			</dependency>
@@ -449,6 +458,7 @@
 				<artifactId>querydsl-jpa</artifactId>
 				<version>${querydsl.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.mongodb</groupId>
 				<artifactId>mongo-java-driver</artifactId>
