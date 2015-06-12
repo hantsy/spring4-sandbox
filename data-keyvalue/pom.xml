@@ -178,26 +178,12 @@
 						<goals>
 							<goal>process</goal>
 						</goals>
-						<phase>generate-sources</phase>
 						<configuration>
 							<outputDirectory>target/generated-sources/java</outputDirectory>
-							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+							<processor>com.mysema.query.apt.QuerydslAnnotationProcessor</processor>
 						</configuration>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
-						<artifactId>querydsl-apt</artifactId>
-						<version>${querydsl.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
-						<artifactId>querydsl-jpa</artifactId>
-						<classifier>apt</classifier>
-						<version>${querydsl.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 
 			<plugin>
