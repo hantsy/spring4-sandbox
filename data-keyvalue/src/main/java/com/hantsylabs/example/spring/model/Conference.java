@@ -11,7 +11,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.keyvalue.annotation.KeySpace;
 
+import com.mysema.query.annotations.QueryEntity;
+
 @KeySpace(value="conferences")
+@QueryEntity
 public class Conference {
 	
 	@Id
