@@ -1,61 +1,38 @@
 package com.hantsylabs.example.spring.model;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
 
-@Entity
-@NamedQuery(name = "Conference.searchByMyNamedQuery", query = "from Conference where name=?")
+@Document(indexName="conference_idx")
 public class Conference {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@org.springframework.data.annotation.Id
 	private Long id;
 
-	@Version
-	@Column(name = "version")
+	@org.springframework.data.annotation.Version
 	private Integer version;
 
 	@NotNull
+	@Field(store=true, index=FieldIndex.analyzed)
 	private String name;
 
 	@NotNull
+	@Field(store=true, index=FieldIndex.analyzed)
 	private String description;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
+	
+	@Field(store=false, index=FieldIndex.not_analyzed)
 	private Date startedDate;
 
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
+	@Field(store=false, index=FieldIndex.not_analyzed)
 	private Date endedDate;
 
 	@NotNull
+	@Field(store=false, index=FieldIndex.not_analyzed)
 	private String slug;
-	
-	private Address address;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "conference")
-	private Set<Signup> signups = new HashSet<Signup>();
 
 	public String getName() {
 		return this.name;
@@ -97,21 +74,6 @@ public class Conference {
 		this.slug = slug;
 	}
 
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this,
-				ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -128,19 +90,12 @@ public class Conference {
 		this.version = version;
 	}
 
-	public Set<Signup> getSignups() {
-		return signups;
+	@Override
+	public String toString() {
+		return "Conference [id=" + id + ", version=" + version + ", name=" + name + ", description=" + description
+				+ ", startedDate=" + startedDate + ", endedDate=" + endedDate + ", slug=" + slug + "]";
 	}
 
-	public void setSignups(Set<Signup> signups) {
-		this.signups = signups;
-	}
 
-	public void addSignup(Signup newSignup) {
-		if(!signups.contains(newSignup)){
-			this.signups.add(newSignup);
-			newSignup.setConference(this);
-		}
-	}
 
 }
