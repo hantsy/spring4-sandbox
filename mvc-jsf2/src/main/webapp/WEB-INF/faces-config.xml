@@ -6,8 +6,4 @@
    	<application>
    		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
    	</application>
-   
-<!--     <lifecycle>
-        <phase-listener>com.hantsylabs.example.ee7.jsf.DebugPhaseListener</phase-listener>
-    </lifecycle> -->
 </faces-config>

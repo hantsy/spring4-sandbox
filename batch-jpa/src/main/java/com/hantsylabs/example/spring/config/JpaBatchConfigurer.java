@@ -1,13 +1,13 @@
 package com.hantsylabs.example.spring.config;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.configuration.BatchConfigurationException;
 import org.springframework.batch.core.configuration.annotation.BatchConfigurer;
-import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.explore.JobExplorer;
@@ -30,11 +30,12 @@ public class JpaBatchConfigurer implements BatchConfigurer {
 	private static final Logger logger = LoggerFactory
 			.getLogger(JpaBatchConfigurer.class);
 
-	@Autowired
+	@Inject	
 	private DataSource dataSource;
 	
-	@Autowired
+	@Inject
 	private PlatformTransactionManager transactionManager;
+	
 	private JobRepository jobRepository;
 	private JobLauncher jobLauncher;
 	private JobExplorer jobExplorer;

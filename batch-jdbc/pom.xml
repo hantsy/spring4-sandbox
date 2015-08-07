@@ -91,13 +91,7 @@
 
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-infrastructure</artifactId>
-			<version>${spring.batch.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-integration</artifactId>
-			<version>${spring.batch.version}</version>
+			<artifactId>spring-batch-core</artifactId>
 		</dependency>
 
 		<dependency>
