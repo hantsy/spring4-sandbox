@@ -22,7 +22,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@NamedQuery(name = "Conference.searchByMyNamedQuery", query = "from Conference where name=?")
 public class Conference {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,11 +50,6 @@ public class Conference {
 
 	@NotNull
 	private String slug;
-	
-	private Address address;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "conference")
-	private Set<Signup> signups = new HashSet<Signup>();
 
 	public String getName() {
 		return this.name;
@@ -97,21 +91,6 @@ public class Conference {
 		this.slug = slug;
 	}
 
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this,
-				ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -128,19 +107,9 @@ public class Conference {
 		this.version = version;
 	}
 
-	public Set<Signup> getSignups() {
-		return signups;
-	}
-
-	public void setSignups(Set<Signup> signups) {
-		this.signups = signups;
-	}
-
-	public void addSignup(Signup newSignup) {
-		if(!signups.contains(newSignup)){
-			this.signups.add(newSignup);
-			newSignup.setConference(this);
-		}
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 }

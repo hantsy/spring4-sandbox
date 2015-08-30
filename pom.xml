@@ -25,6 +25,7 @@
 		<module>data-keyvalue</module>
 		<module>data-redis</module>
 		<module>data-elasticsearch</module>
+		<module>data-neo4j</module>
 		<module>jpa-audit</module>
 		<module>jpa-revision</module>
 		<module>jpa-cache</module>
@@ -50,10 +51,9 @@
 		<module>mvc-jsf2</module>
 	</modules>
 	<properties>
-		<aspectj.version>1.8.4</aspectj.version>
+		<aspectj.version>1.8.6</aspectj.version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<roo.version>1.2.3.RELEASE</roo.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<querydsl.version>3.6.3</querydsl.version>
 		<mongo-java-driver.version>2.12.2</mongo-java-driver.version>
@@ -61,11 +61,13 @@
 		<spring-batch.version>3.0.4.RELEASE</spring-batch.version>
 		<spring-webflow.version>2.4.1.RELEASE</spring-webflow.version>
 		<spring-security.version>4.0.2.RELEASE</spring-security.version>
+		<spring-data-neo4j.version>4.0.0.RC2</spring-data-neo4j.version>
+		<neo4j.version>2.2.4</neo4j.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
-		<hibernate5.version>5.0.0.CR4</hibernate5.version>
+		<hibernate5.version>5.0.0.Final</hibernate5.version>
 		<hazelcast.version>3.2.3</hazelcast.version>
 		<infinispan.version>6.0.2.Final</infinispan.version>
-		<jackson.version>2.6.0</jackson.version>
+		<jackson.version>2.6.1</jackson.version>
 		<groovy.version>2.4.3</groovy.version>
 		<tiles.version>3.0.5</tiles.version>
 
@@ -614,12 +616,14 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
 					<version>2.2</version>
-					<!-- <configuration> <webXml>target/web.xml</webXml> </configuration> -->
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.5.1</version>
+					<version>3.3</version>
 					<configuration>
 						<source>${java.version}</source>
 						<target>${java.version}</target>

@@ -19,18 +19,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hantsylabs.example.spring.config.JpaConfig;
-import com.hantsylabs.example.spring.config.WebConfig;
-import com.hantsylabs.example.spring.jpa.ConferenceRepository;
+import com.hantsylabs.example.spring.config.Neo4jConfig;
 import com.hantsylabs.example.spring.model.Address;
 import com.hantsylabs.example.spring.model.Conference;
+import com.hantsylabs.example.spring.neo4j.ConferenceRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, WebConfig.class })
-@WebAppConfiguration
+@ContextConfiguration(classes={Neo4jConfig.class})
 public class ConferencRepositoryImplTest {
 	private static final Logger log = LoggerFactory
 			.getLogger(ConferencRepositoryImplTest.class);
@@ -40,7 +37,8 @@ public class ConferencRepositoryImplTest {
 
 	@PersistenceContext
 	EntityManager em;
-
+	
+	
 	private Address newAddress() {
 		Address address = new Address();
 		address.setAddressLine1("address line 1");
@@ -78,56 +76,59 @@ public class ConferencRepositoryImplTest {
 	@BeforeClass
 	public static void init() {
 		log.debug("==================before class=========================");
-
+		
 	}
-
+	
+	
 	@Before
 	@Transactional
-	public void beforeTestCase() {
+	public void beforeTestCase(){
 		log.debug("==================before test case=========================");
 		conferenceRepository.save(newConference());
 	}
-
+	
+	
 	@After
 	@Transactional
-	public void afterTestCase() {
+	public void afterTestCase(){
 		log.debug("==================after test case=========================");
 		conferenceRepository.deleteAll();
 	}
-
-	@Test
+	
+	
+	@Test 
 	@Transactional
-	public void retrieveConference() {
-		Conference conference = newConference();
+	public void retrieveConference(){
+		Conference conference=newConference();
 		conference.setSlug("test-jud");
 		conference.setName("Test JUD");
 		conference.getAddress().setCountry("US");
-		conference = conferenceRepository.save(conference);
-		em.flush();
-		assertTrue(null != conference.getId());
+		conference =conferenceRepository.save(conference);
+		em.flush();	
+		assertTrue(null!=conference.getId());
 		em.clear();
-
-		conference = conferenceRepository.findBySlug("test-jud");
-		assertTrue(null != conference);
+		
+		conference=conferenceRepository.findBySlug("test-jud");
+		assertTrue(null!=conference);
 		em.clear();
-
-		List<Conference> confs = conferenceRepository
-				.findByAddressCountry("US");
+		
+		List<Conference> confs=conferenceRepository.findByAddressCountry("US");
 		assertTrue(!confs.isEmpty());
 		em.clear();
-
-		confs = conferenceRepository.searchByConferenceName("Test JUD");
+		
+		
+		confs=conferenceRepository.searchByConferenceName("Test JUD");
 		assertTrue(!confs.isEmpty());
 		em.clear();
-
-		confs = conferenceRepository.searchByNamedConferenceName("Test JUD");
+		
+		confs=conferenceRepository.searchByNamedConferenceName("Test JUD");
 		assertTrue(!confs.isEmpty());
 		em.clear();
-
-		confs = conferenceRepository.searchByMyNamedQuery("Test JUD");
+		
+		confs=conferenceRepository.searchByMyNamedQuery("Test JUD");
 		assertTrue(!confs.isEmpty());
 		em.clear();
-
-	}
+			
+	} 
 
 }
