@@ -44,9 +44,12 @@ public class WebConfig extends SpringDataWebConfiguration {
     @Override
 	public void addViewControllers(ViewControllerRegistry registry) {
     	registry.addRedirectViewController("/", "/tasks");
-		registry
-			.addViewController("/add")
-			.setViewName("add");
+//		registry
+//			.addViewController("/add")
+//			.setViewName("add");
+//		registry
+//			.addViewController("/edit")
+//			.setViewName("edit");
 		
 	}
 
@@ -56,6 +59,8 @@ public class WebConfig extends SpringDataWebConfiguration {
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry
 			.tiles();
+//			.prefix("WEB-INF/views")
+//			.suffix(".jspx");
 	}
 	
 	@Bean
