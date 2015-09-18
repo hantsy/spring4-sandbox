@@ -28,7 +28,7 @@ import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import com.hantsylabs.example.spring.config.EnversDataJpaConfig;
+import com.hantsylabs.example.spring.config.DataEnversConfig;
 import com.hantsylabs.example.spring.jpa.ConferenceRepository;
 import com.hantsylabs.example.spring.jpa.SignupRepository;
 import com.hantsylabs.example.spring.jpa.UserRepository;
@@ -39,7 +39,7 @@ import com.hantsylabs.example.spring.model.Status;
 import com.hantsylabs.example.spring.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=EnversDataJpaConfig.class)
+@ContextConfiguration(classes=DataEnversConfig.class)
 @TransactionConfiguration()
 public class SignupEnversTest {
 	private static final Logger log = LoggerFactory

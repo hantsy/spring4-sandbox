@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = {
 		"com.hantsylabs.example.spring.jpa" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 @EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
-public class EnversDataJpaConfig {
+public class DataEnversConfig {
 
 	@Bean
 	public DataSource dataSource() {
