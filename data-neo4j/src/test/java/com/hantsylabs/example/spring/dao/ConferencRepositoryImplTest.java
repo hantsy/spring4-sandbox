@@ -35,21 +35,7 @@ public class ConferencRepositoryImplTest {
 	@Autowired
 	private ConferenceRepository conferenceRepository;
 
-	@PersistenceContext
-	EntityManager em;
 	
-	
-	private Address newAddress() {
-		Address address = new Address();
-		address.setAddressLine1("address line 1");
-		address.setAddressLine2("address line 2");
-		address.setCity("NY");
-		address.setCountry("CN");
-		address.setZipCode("510000");
-
-		return address;
-	}
-
 	private Conference newConference() {
 		Conference conf = new Conference();
 		conf.setName("JUD2013");
@@ -68,7 +54,6 @@ public class ConferencRepositoryImplTest {
 		Date endedDate = cal.getTime();
 		conf.setEndedDate(endedDate);
 
-		conf.setAddress(newAddress());
 		log.debug("new conference object:" + conf);
 		return conf;
 	}
@@ -112,22 +97,22 @@ public class ConferencRepositoryImplTest {
 		assertTrue(null!=conference);
 		em.clear();
 		
-		List<Conference> confs=conferenceRepository.findByAddressCountry("US");
-		assertTrue(!confs.isEmpty());
-		em.clear();
-		
-		
-		confs=conferenceRepository.searchByConferenceName("Test JUD");
-		assertTrue(!confs.isEmpty());
-		em.clear();
-		
-		confs=conferenceRepository.searchByNamedConferenceName("Test JUD");
-		assertTrue(!confs.isEmpty());
-		em.clear();
-		
-		confs=conferenceRepository.searchByMyNamedQuery("Test JUD");
-		assertTrue(!confs.isEmpty());
-		em.clear();
+//		List<Conference> confs=conferenceRepository.findByAddressCountry("US");
+//		assertTrue(!confs.isEmpty());
+//		em.clear();
+//		
+//		
+//		confs=conferenceRepository.searchByConferenceName("Test JUD");
+//		assertTrue(!confs.isEmpty());
+//		em.clear();
+//		
+//		confs=conferenceRepository.searchByNamedConferenceName("Test JUD");
+//		assertTrue(!confs.isEmpty());
+//		em.clear();
+//		
+//		confs=conferenceRepository.searchByMyNamedQuery("Test JUD");
+//		assertTrue(!confs.isEmpty());
+//		em.clear();
 			
 	} 
 
