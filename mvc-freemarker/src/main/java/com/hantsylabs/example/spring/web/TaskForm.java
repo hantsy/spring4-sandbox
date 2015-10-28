@@ -12,16 +12,16 @@ public class TaskForm implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 
-	@NotEmpty
+	@NotEmpty	
 	private String name;
 
 	@NotEmpty
-	@Size(min = 10)
+	@Size(min = 10, max = 200)
 	private String description;
-	
+
 	public Long getId() {
 		return id;
 	}

@@ -2,12 +2,12 @@
 <#import "template.ftl" as t/>
 <@t.page title="Spring MVC Sample with Freemarker">
 <div class="page-header">
-	<h1> Task Details (#${details.id})</h1>
+	<h1>Details of Task  #${details.id}</h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt> Task Name:</dt>
-  <dd> ${details.id}</dd>
+  <dd> ${details.name}</dd>
   <dt> Task Description:</dt>
   <dd> ${details.description}</dd>
   <dt> Status:</dt>

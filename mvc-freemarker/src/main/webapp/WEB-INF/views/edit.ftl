@@ -3,14 +3,14 @@
 <#import "template.ftl" as t/>
 <@t.page title="Spring MVC Sample with Freemarker">
 <div class="page-header">
-	<h1> Edit task #${task.id}</h1>
+	<h1> Edit Task #${task.id}</h1>
 </div>
 <@spring.url var="actionUrl" value="/tasks/${task.id}"/>
 <@form.form class="form" role="form" commandName="task" action="${actionUrl}" method="post">
 		  <input type="hidden" name="_method" value="PUT"/>
 		  
 		  <div class="form-group <@spring.hasBindErrors name='task'><#if errors.hasFieldErrors('name')>has-error</#if></@spring.hasBindErrors>">
-		    <label for="name"> Task Name:</label>
+		    <label class="control-label" for="name"> Task Name:</label>
             
 		    <@form.input 
 		    	id="name" 
@@ -24,7 +24,7 @@
 
 		  <div class="form-group <@spring.hasBindErrors name='task'><#if errors.hasFieldErrors('description')>has-error</#if></@spring.hasBindErrors>">
             
-		    <label for="description">Description:</label>
+		    <label class="control-label" for="description">Description:</label>
 		    <@form.textarea 
 		    id="description" 
 		    cssClass="form-control" 
