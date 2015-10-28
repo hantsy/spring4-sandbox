@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hantsylabs.example.spring.jpa.TaskRepository;
 import com.hantsylabs.example.spring.model.Status;
@@ -74,7 +75,7 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public String newTask(ModelMap model) {
+	public String newTask(Model model) {
 
 		model.addAttribute("task", new TaskForm());
 
@@ -82,10 +83,9 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public String createTask(@ModelAttribute("task") @Valid TaskForm fm, BindingResult result, Model model) {
+	public String createTask(@ModelAttribute("task") @Valid TaskForm fm, BindingResult result, RedirectAttributes redirectAttrs) {
 		log.debug("saving task @" + fm);
 		if (result.hasErrors()) {
-			model.addAttribute("task", fm);
 			return "new";
 		}
 
@@ -94,6 +94,8 @@ public class TaskController {
 		task.setDescription(fm.getDescription());
 
 		task = taskRepository.save(task);
+		
+		redirectAttrs.addFlashAttribute("flashMessage", AlertMessage.success("Task is created sucessfully!"));
 
 		return "redirect:/tasks";
 	}
@@ -112,6 +114,7 @@ public class TaskController {
 		
 		TaskForm fm =new TaskForm();
 
+		fm.setId(task.getId());
 		fm.setName(task.getName());
 		fm.setDescription(task.getDescription());
 
@@ -122,11 +125,10 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, params = "!action")
-	public String updateTask(@PathVariable("id") Long id, @ModelAttribute("task") @Valid TaskForm fm, BindingResult result, Model model) {
+	public String updateTask(@PathVariable("id") Long id, @ModelAttribute("task") @Valid TaskForm fm, BindingResult result, RedirectAttributes redirectAttrs) {
 		
 		log.debug("updating task @" + fm);
 		if (result.hasErrors()) {
-			model.addAttribute("task", fm);
 			return "edit";
 		}
 
@@ -140,6 +142,8 @@ public class TaskController {
 		task.setDescription(fm.getDescription());
 
 		taskRepository.save(task);
+		
+		redirectAttrs.addFlashAttribute("flashMessage", AlertMessage.info("Task is updated sucessfully!"));
 
 		return "redirect:/tasks";
 	}
@@ -189,6 +193,7 @@ public class TaskController {
 		TaskDetails details = new TaskDetails();
 		details.setId(task.getId());
 		details.setName(task.getName());
+		details.setStatus(task.getStatus().name());
 		details.setDescription(task.getDescription());
 		details.setCreatedDate(task.getCreatedDate());
 		details.setLastModifiedDate(task.getLastModifiedDate());
@@ -203,7 +208,7 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public String deleteTask(@PathVariable("id") Long id) {
+	public String deleteTask(@PathVariable("id") Long id, RedirectAttributes redirectAttrs) {
 
 		Task task = taskRepository.findOne(id);
 
@@ -212,6 +217,8 @@ public class TaskController {
 		}
 
 		taskRepository.delete(id);
+		
+		redirectAttrs.addFlashAttribute("flashMessage", AlertMessage.danger("Task "+id+" is deleted!"));
 
 		return "redirect:/tasks";
 	}

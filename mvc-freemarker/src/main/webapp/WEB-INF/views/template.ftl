@@ -39,12 +39,18 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<@spring.url '/tasks'/>">Home</a></li>
-            <li><a href="<@spring.url '/tasks/new'/>">New Task</a></li>
+            <li><a href="<@spring.url '/tasks/new'/>"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Task</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
+    	<#if flashMessage??>
+    	<div class="alert alert-${flashMessage.type} alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  ${flashMessage.text}
+		</div>
+		</#if>
 		<#nested>
     </div>
    	<script type="text/javascript" src="<@spring.url '/'/>/webjars/jquery/2.1.3/jquery.min.js"></script>

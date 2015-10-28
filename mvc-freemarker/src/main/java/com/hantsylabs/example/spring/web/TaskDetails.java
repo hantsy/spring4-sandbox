@@ -6,10 +6,13 @@ import java.util.Date;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.hantsylabs.example.spring.model.Status;
+
 public class TaskDetails implements Serializable {
 
 	private Long id;
 	private String name;
+	private String status;
 	private String description;
 	private Date createdDate;
 	private Date lastModifiedDate;
@@ -55,6 +58,15 @@ public class TaskDetails implements Serializable {
 		this.lastModifiedDate = lastModifiedDate;
 	}
 	
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this,
