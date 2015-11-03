@@ -252,7 +252,10 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>font-awesome</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-material-design</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

@@ -588,6 +588,12 @@
 				<version>4.3.0-1</version>
 			</dependency>
 
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-material-design</artifactId>
+			<version>0.3.0</version>
+		</dependency>
+
 			<!--test -->
 			<dependency>
 				<groupId>junit</groupId>

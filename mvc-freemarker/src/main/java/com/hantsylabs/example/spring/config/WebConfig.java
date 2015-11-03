@@ -19,9 +19,20 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.hantsylabs.example.spring" }, useDefaultFilters = false, includeFilters = {
-		@Filter(type = FilterType.ANNOTATION, value = { Controller.class, RestController.class,
-				ControllerAdvice.class }) })
+@ComponentScan(
+		basePackages = { "com.hantsylabs.example.spring" }, 
+		useDefaultFilters = false, 
+		includeFilters = {
+			@Filter(
+					type = FilterType.ANNOTATION, 
+					value = { 
+							Controller.class, 
+							RestController.class,
+							ControllerAdvice.class 
+					}
+			) 
+		}
+)
 public class WebConfig extends SpringDataWebConfiguration {
 
 	@Override
