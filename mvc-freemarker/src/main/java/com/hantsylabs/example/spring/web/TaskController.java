@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -221,6 +222,12 @@ public class TaskController {
 		redirectAttrs.addFlashAttribute("flashMessage", AlertMessage.danger("Task "+id+" is deleted!"));
 
 		return "redirect:/tasks";
+	}
+	
+	@ExceptionHandler(value=TaskNotFoundException.class)
+	public String notFound(TaskNotFoundException ex, Model model){
+		model.addAttribute("ex", ex.getMessage());	
+		return "error";
 	}
 
 }
