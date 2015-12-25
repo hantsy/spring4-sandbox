@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>hibernate4</artifactId>
 	<packaging>jar</packaging>
-	<name>jpa</name>
-	<description>Using Hibernate4 API in Spring</description>
+	<name>hibernate4</name>
+	<description>Using hibernate4 API in Spring</description>
 	<parent>
 		<groupId>com.hantsylabs.example.spring4</groupId>
 		<artifactId>spring4-sandbox</artifactId>
@@ -198,7 +198,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 			</plugin>
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>selenium-maven-plugin</artifactId> 

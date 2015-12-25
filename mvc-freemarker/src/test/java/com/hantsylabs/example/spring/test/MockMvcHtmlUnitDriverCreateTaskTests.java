@@ -1,7 +1,5 @@
 package com.hantsylabs.example.spring.test;
 
-import static org.junit.Assert.fail;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,7 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 @WebAppConfiguration
-public class TaskControllerWebDriverTests {
+public class MockMvcHtmlUnitDriverCreateTaskTests {
 	
 	@Autowired
 	WebApplicationContext context;

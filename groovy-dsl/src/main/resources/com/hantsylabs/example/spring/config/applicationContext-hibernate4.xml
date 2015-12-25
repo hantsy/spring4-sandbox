@@ -14,7 +14,7 @@
 	</jdbc:embedded-database>
 
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		class="org.springframework.orm.org.eclipse.jetty.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan">
 			<list>
@@ -31,12 +31,12 @@
 	</bean>
 
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		class="org.springframework.orm.org.eclipse.jetty.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<context:component-scan
-		base-package="com.hantsylabs.example.spring.dao,com.hantsylabs.example.spring.hibernate4">
+		base-package="com.hantsylabs.example.spring.dao,com.hantsylabs.example.spring.org.eclipse.jetty">
 	</context:component-scan>
 
 	<tx:annotation-driven mode="aspectj"/>
