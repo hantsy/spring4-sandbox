@@ -1,4 +1,4 @@
-package com.hantsylabs.example.spring.dao;
+package com.hantsylabs.example.spring.test.mockmvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -31,45 +31,35 @@ import com.hantsylabs.example.spring.config.JpaConfig;
 import com.hantsylabs.example.spring.config.WebConfig;
 import com.hantsylabs.example.spring.jpa.TaskRepository;
 import com.hantsylabs.example.spring.model.Task;
+import com.hantsylabs.example.spring.test.Fixtures;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { JpaConfig.class, WebConfig.class })
 @WebAppConfiguration
-public class TaskRepositoryImplTest {
-	private static final Logger log = LoggerFactory
-			.getLogger(TaskRepositoryImplTest.class);
+public class MockTaskControllerTest {
+	private static final Logger log = LoggerFactory.getLogger(MockTaskControllerTest.class);
 
 	private MockMvc mvc;
-	
+
 	@Inject
 	private WebApplicationContext ctx;
 
 	@Autowired
 	private TaskRepository taskRepository;
 
-	@PersistenceContext
-	EntityManager em;
-
-	private Task newTask() {
-		Task conf = new Task();
-		conf.setName("test");
-		conf.setDescription("Your first test task");
-		return conf;
-	}
+	Task task;
 
 	@BeforeClass
 	public static void init() {
 		log.debug("==================before class=========================");
-
 	}
 
 	@Before
 	@Transactional
 	public void beforeTestCase() {
 		log.debug("==================before test case=========================");
-		taskRepository.save(newTask());
+		task = taskRepository.save(Fixtures.create());
 		mvc = webAppContextSetup(ctx).build();
-		
 	}
 
 	@After
@@ -83,27 +73,27 @@ public class TaskRepositoryImplTest {
 	public void retrieveTasks() throws Exception {
 		mvc.perform(get("/api/tasks")).andExpect(status().isOk());
 	}
-	
+
 	@Test
 	public void retrieveSingleTask() throws Exception {
-		mvc.perform(
-				get("/api/tasks/{id}", 1L)
-				.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andExpect(content().contentType("application/json;charset=UTF-8"))
-		.andExpect(jsonPath("id").value(1));
+		mvc.perform(get("/api/tasks/{id}", task.getId()).accept(MediaType.APPLICATION_JSON))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType("application/json;charset=UTF-8"))
+			.andExpect(jsonPath("id").isNumber());
 	}
-	
+
 	@Test
 	public void removeTask() throws Exception {
-		mvc.perform(
-				delete("/api/tasks/{id}", 1L))
-		.andExpect(status().isNoContent());
-		
-		mvc.perform(
-				get("/api/tasks/{id}", 1L)
-				.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isNotFound());
+		mvc.perform(delete("/api/tasks/{id}", task.getId()))
+			.andExpect(status().isNoContent());
+		mvc.perform(get("/api/tasks/{id}", task.getId()).accept(MediaType.APPLICATION_JSON))
+			.andExpect(status().isNotFound());
+	}
+
+	@Test
+	public void noneExistingTask() throws Exception {
+		mvc.perform(get("/api/tasks/{id}", 1000L).accept(MediaType.APPLICATION_JSON))
+			.andExpect(status().isNotFound());
 	}
 
 }
