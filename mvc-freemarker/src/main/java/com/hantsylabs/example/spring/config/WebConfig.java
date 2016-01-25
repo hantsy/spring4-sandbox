@@ -54,7 +54,7 @@ public class WebConfig extends SpringDataWebConfiguration {
 	@Bean
 	public FreeMarkerConfigurer freeMarkerConfigurer() {
 		FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
-		configurer.setTemplateLoaderPath("/WEB-INF/views/");
+		configurer.setTemplateLoaderPath("/WEB-INF/templates/");
 		return configurer;
 	}
 

@@ -1,4 +1,4 @@
-package com.hantsylabs.example.spring.test.integraton;
+package com.hantsylabs.example.spring.test.htmlunit;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 
@@ -33,7 +33,7 @@ import com.hantsylabs.example.spring.test.MockDataConfig;
 @ContextConfiguration(classes = { AppConfig.class, MockDataConfig.class, WebConfig.class })
 @WebAppConfiguration
 //@WithMockUser
-public class MockMvcWebClientCreateTaskITests {
+public class MockMvcWebClientCreateTaskTests {
 
 	@Autowired
 	WebApplicationContext context;
@@ -47,6 +47,7 @@ public class MockMvcWebClientCreateTaskITests {
 				//.webAppContextSetup(context, springSecurity())
 				// for illustration only - defaults to ""
 				.contextPath("")
+				//.useMockMvcForHosts("example.com","example.org")
 				.build();
 	}
 
@@ -58,7 +59,7 @@ public class MockMvcWebClientCreateTaskITests {
 	@Test
 	public void testCreateTasks() throws Exception {
 
-		HtmlPage createTaskPage = webClient.getPage("http://localhost:8080/mvc-freemarker/tasks/new");
+		HtmlPage createTaskPage = webClient.getPage("http://localhost:8080/tasks/new");
 
 		HtmlForm form = createTaskPage.getHtmlElementById("form");
 		HtmlTextInput nameInput = createTaskPage.getHtmlElementById("name");
