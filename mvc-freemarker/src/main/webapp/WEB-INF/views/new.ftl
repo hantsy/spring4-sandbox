@@ -4,7 +4,7 @@
 <div class="page-header">
 	<h1> Add a new task</h1>
 </div>
-<form class="form" role="form" action="<@spring.url '/tasks'/>" method="post">
+<form id="form" class="form" role="form" action="<@spring.url '/tasks'/>" method="post">
 		  
 		  <@spring.bind "task.name"/>
 		  <div class="form-group <#if spring.status.errorMessages?size gt 0>has-error</#if>">
@@ -36,7 +36,7 @@
 		  </div>
 	
 		 <div class="form-group">
-		  	<button type="submit" class="btn btn-lg btn-primary">Add Task</button>
+		  	<button id="submitTask" type="submit" class="btn btn-lg btn-primary">Add Task</button>
 		 </div>
 </form>
 </@t.page>

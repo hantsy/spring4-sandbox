@@ -8,16 +8,13 @@ public class AlertMessage implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	enum Type{
-		success,
-		warning,
-		danger,
-		info
+
+	enum Type {
+		success, warning, danger, info
 	}
-	
+
 	private Type type;
-	
+
 	private String text;
 
 	public Type getType() {
@@ -40,30 +37,30 @@ public class AlertMessage implements Serializable {
 	public String toString() {
 		return "AlertMessage [type=" + type + ", text=" + text + "]";
 	}
-	
-	public static AlertMessage info(String text){
-		AlertMessage msg=new AlertMessage();
+
+	public static AlertMessage info(String text) {
+		AlertMessage msg = new AlertMessage();
 		msg.setType(Type.info);
 		msg.setText(text);
 		return msg;
 	}
-	
-	public static AlertMessage success(String text){
-		AlertMessage msg=new AlertMessage();
+
+	public static AlertMessage success(String text) {
+		AlertMessage msg = new AlertMessage();
 		msg.setType(Type.success);
 		msg.setText(text);
 		return msg;
 	}
-	
-	public static AlertMessage danger(String text){
-		AlertMessage msg=new AlertMessage();
+
+	public static AlertMessage danger(String text) {
+		AlertMessage msg = new AlertMessage();
 		msg.setType(Type.danger);
 		msg.setText(text);
 		return msg;
 	}
-	
-	public static AlertMessage warning(String text){
-		AlertMessage msg=new AlertMessage();
+
+	public static AlertMessage warning(String text) {
+		AlertMessage msg = new AlertMessage();
 		msg.setType(Type.warning);
 		msg.setText(text);
 		return msg;

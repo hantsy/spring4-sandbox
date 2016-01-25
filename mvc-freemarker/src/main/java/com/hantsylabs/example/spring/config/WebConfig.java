@@ -20,18 +20,18 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan(
-		basePackages = { "com.hantsylabs.example.spring" }, 
-		useDefaultFilters = false, 
-		includeFilters = {
-			@Filter(
-					type = FilterType.ANNOTATION, 
-					value = { 
-							Controller.class, 
-							RestController.class,
-							ControllerAdvice.class 
-					}
-			) 
-		}
+	basePackages = { "com.hantsylabs.example.spring" }, 
+	useDefaultFilters = false, 
+	includeFilters = {
+		@Filter(
+			type = FilterType.ANNOTATION, 
+			value = { 
+				Controller.class, 
+				RestController.class,
+				ControllerAdvice.class 
+			}
+		) 
+	}
 )
 public class WebConfig extends SpringDataWebConfiguration {
 
@@ -57,13 +57,6 @@ public class WebConfig extends SpringDataWebConfiguration {
 		configurer.setTemplateLoaderPath("/WEB-INF/views/");
 		return configurer;
 	}
-
-	// @Bean
-	// public TilesConfigurer tilesConfiguer() {
-	// TilesConfigurer config=new TilesConfigurer();
-	// config.setDefinitions("/WEB-INF/tiles/definitions.xml");
-	// return config;
-	// }
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

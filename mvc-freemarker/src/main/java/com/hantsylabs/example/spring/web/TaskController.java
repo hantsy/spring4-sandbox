@@ -36,8 +36,12 @@ import com.hantsylabs.example.spring.model.Task;
 public class TaskController {
 	private static final Logger log = LoggerFactory.getLogger(TaskController.class);
 
+	TaskRepository taskRepository;
+	
 	@Inject
-	private TaskRepository taskRepository;
+	private TaskController(TaskRepository taskRepository){
+		this.taskRepository = taskRepository;
+	}
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String allTask(Model model) {
@@ -87,6 +91,7 @@ public class TaskController {
 	public String createTask(@ModelAttribute("task") @Valid TaskForm fm, BindingResult result, RedirectAttributes redirectAttrs) {
 		log.debug("saving task @" + fm);
 		if (result.hasErrors()) {
+			redirectAttrs.addFlashAttribute("flashMessage", AlertMessage.danger("Invalid input data!"));
 			return "new";
 		}
 

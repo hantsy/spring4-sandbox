@@ -11,8 +11,7 @@ import com.hantsylabs.example.spring.model.Task;
 
 
 
-public interface TaskRepository extends 
-		JpaRepository<Task, Long> {
+public interface TaskRepository extends JpaRepository<Task, Long> {
 	
 	Task findByName(String name);
 	
