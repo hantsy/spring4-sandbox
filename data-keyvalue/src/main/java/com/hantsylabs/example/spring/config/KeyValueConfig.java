@@ -7,6 +7,6 @@ import org.springframework.data.map.repository.config.EnableMapRepositories;
 @Configuration
 @ComponentScan(basePackages = { "com.hantsylabs.example.spring.repository" } )
 @EnableMapRepositories(basePackages= {"com.hantsylabs.example.spring.repository"})
-public class DataConfig {
+public class KeyValueConfig {
 
 }

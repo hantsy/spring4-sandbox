@@ -22,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Conference {
+public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -33,66 +33,21 @@ public class Conference {
 	private Integer version;
 
 	@NotNull
-	private String name;
+	private String title;
 
 	@NotNull
-	private String description;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "M-")
-	private Date startedDate;
+	private String content;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(style = "M-")
-	private Date endedDate;
-
+	private Date createdAt;
+	
 	@NotNull
 	private String slug;
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Date getStartedDate() {
-		return this.startedDate;
-	}
-
-	public void setStartedDate(Date startedDate) {
-		this.startedDate = startedDate;
-	}
-
-	public Date getEndedDate() {
-		return this.endedDate;
-	}
-
-	public void setEndedDate(Date endedDate) {
-		this.endedDate = endedDate;
-	}
-
-	public String getSlug() {
-		return this.slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
-	}
-
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Long id) {
@@ -100,11 +55,43 @@ public class Conference {
 	}
 
 	public Integer getVersion() {
-		return this.version;
+		return version;
 	}
 
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getSlug() {
+		return slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
 	}
 
 	@Override

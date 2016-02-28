@@ -19,12 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement()
 public class Neo4jConfig extends Neo4jConfiguration {
 
-	@Bean
-	public Neo4jServer neo4jServer() {
-		return new RemoteServer("http://localhost:7474");
-	}
-
-	@Bean
+	@Bean	
 	public SessionFactory getSessionFactory() {
 		// with domain entity base package(s)
 		return new SessionFactory("com.hantsylabs.example.spring.model");

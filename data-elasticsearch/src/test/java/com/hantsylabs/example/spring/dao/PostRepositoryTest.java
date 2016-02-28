@@ -16,35 +16,32 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hantsylabs.example.spring.config.ElasticSearchConfig;
-import com.hantsylabs.example.spring.model.Conference;
-import com.hantsylabs.example.spring.search.ConferenceRepository;
+import com.hantsylabs.example.spring.model.Post;
+import com.hantsylabs.example.spring.search.PostRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={ElasticSearchConfig.class})
-public class ConferencRepositoryImplTest {
+public class PostRepositoryTest {
 	private static final Logger log = LoggerFactory
-			.getLogger(ConferencRepositoryImplTest.class);
+			.getLogger(PostRepositoryTest.class);
 
 	@Autowired
-	private ConferenceRepository conferenceRepository;
+	private PostRepository conferenceRepository;
 
-	private Conference newConference() {
-		Conference conf = new Conference();
-		conf.setName("JUD2013");
+	private Post newConference() {
+		Post conf = new Post();
+		conf.setTitle("JUD2013");
 		conf.setSlug("jud-2013");
-		conf.setDescription("JBoss User Developer Conference 2013 Boston");
+		conf.setContent("JBoss User Developer Conference 2013 Boston");
 
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DAY_OF_YEAR, 30);
 
 		Date startedDate = cal.getTime();
 
-		conf.setStartedDate(startedDate);
+		conf.setCreatedAt(startedDate);
 
 		cal.add(Calendar.DAY_OF_YEAR, 7);
-
-		Date endedDate = cal.getTime();
-		conf.setEndedDate(endedDate);
 
 		log.debug("new conference object:" + conf);
 		return conf;
@@ -76,9 +73,7 @@ public class ConferencRepositoryImplTest {
 	@Test 
 	@Transactional
 	public void retrieveConference(){
-		Conference conference=newConference();
-		conference.setSlug("test-jud");
-		conference.setName("Test JUD");
+		Post conference=newConference()
 
 			
 	} 

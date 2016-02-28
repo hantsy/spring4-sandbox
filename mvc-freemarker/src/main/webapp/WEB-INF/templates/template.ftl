@@ -10,21 +10,18 @@
     <meta name="author" content=""/>
   	<title>${title?html}</title>
 
-	<link href="<@spring.url '/'/>/webjars/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+	<link href="<@spring.url '/webjars/bootstrap/3.3.5/css/bootstrap.min.css'/>" rel="stylesheet"
 	              media="screen"/>
-
-	<link href="<@spring.url '/'/>/webjars/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+	<link href="<@spring.url '/webjars/font-awesome/4.3.0/css/font-awesome.min.css'/>" rel="stylesheet"
 	              media="screen"/>	
-
-    <link href="<@spring.url '/'/>/css/main.css" rel="stylesheet"/>
-    
-    <link href="<@spring.url '/'/>/webjars/bootstrap-material-design/0.3.0/css/material.min.css" rel="stylesheet"/>
-    <link href="<@spring.url '/'/>/webjars/bootstrap-material-design/0.3.0/css/ripples.min.css" rel="stylesheet"/>
-    <link href="<@spring.url '/'/>/webjars/bootstrap-material-design/0.3.0/css/roboto.min.css" rel="stylesheet"/>
+    <link href="<@spring.url '/css/main.css'/>" rel="stylesheet"/> 
+    <link href="<@spring.url '/webjars/bootstrap-material-design/0.3.0/css/material.min.css'/>" rel="stylesheet"/>
+    <link href="<@spring.url '/webjars/bootstrap-material-design/0.3.0/css/ripples.min.css'/>" rel="stylesheet"/>
+    <link href="<@spring.url '/webjars/bootstrap-material-design/0.3.0/css/roboto.min.css'/>" rel="stylesheet"/>
 
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'/>"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js'/>"></script>
     <![endif]-->
   </head>
 
@@ -57,11 +54,11 @@
 		</#if>
 		<#nested>
     </div>
-   	<script type="text/javascript" src="<@spring.url '/'/>/webjars/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="<@spring.url '/'/>/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
-	<script type="text/javascript" src="<@spring.url '/'/>/webjars/bootstrap-material-design/0.3.0/js/material.min.js"></script>  
-    <script type="text/javascript" src="<@spring.url '/'/>/webjars/bootstrap-material-design/0.3.0/js/ripples.min.js"></script> 
-   	<script>
+    <script type="text/javascript" src="<@spring.url '/webjars/jquery/2.1.3/jquery.min.js'/>"></script>
+	<script type="text/javascript" src="<@spring.url '/webjars/bootstrap/3.3.5/js/bootstrap.min.js'/>"></script>	
+	<script type="text/javascript" src="<@spring.url '/webjars/bootstrap-material-design/0.3.0/js/material.min.js'/>"></script>  
+    <script type="text/javascript" src="<@spring.url '/webjars/bootstrap-material-design/0.3.0/js/ripples.min.js'/>"></script>    	
+    <script>
    		$.material.init();
     </script>
   </body>

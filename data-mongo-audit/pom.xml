@@ -128,13 +128,13 @@
 		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-mongodb-cross-store</artifactId> 
 			</dependency> -->
 		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
+			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
+			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-mongodb</artifactId>
 		</dependency>
 
@@ -169,12 +169,12 @@
 				</executions>
 				<dependencies>
 					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
+						<groupId>com.querydsl</groupId>
 						<artifactId>querydsl-apt</artifactId>
 						<version>${querydsl.version}</version>
 					</dependency>
 					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
+						<groupId>com.querydsl</groupId>
 						<artifactId>querydsl-mongodb</artifactId>
 						<classifier>apt</classifier>
 						<version>${querydsl.version}</version>

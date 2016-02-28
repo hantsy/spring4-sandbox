@@ -120,13 +120,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
+			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
+			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-jpa</artifactId>
 		</dependency>
 		<dependency>
@@ -182,12 +182,12 @@
 				</executions>
 				<dependencies>
 					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
+						<groupId>com.querydsl</groupId>
 						<artifactId>querydsl-apt</artifactId>
 						<version>${querydsl.version}</version>
 					</dependency>
 					<dependency>
-						<groupId>com.mysema.querydsl</groupId>
+						<groupId>com.querydsl</groupId>
 						<artifactId>querydsl-jpa</artifactId>
 						<classifier>apt</classifier>
 						<version>${querydsl.version}</version>

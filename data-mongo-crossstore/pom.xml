@@ -144,8 +144,8 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb-log4j</artifactId>
 		</dependency>
-		<!-- <dependency> <groupId>com.mysema.querydsl</groupId> <artifactId>querydsl-apt</artifactId> 
-			</dependency> <dependency> <groupId>com.mysema.querydsl</groupId> <artifactId>querydsl-mongodb</artifactId> 
+		<!-- <dependency> <groupId>com.querydsl</groupId> <artifactId>querydsl-apt</artifactId> 
+			</dependency> <dependency> <groupId>com.querydsl</groupId> <artifactId>querydsl-mongodb</artifactId> 
 			</dependency> -->
 
 	</dependencies>
