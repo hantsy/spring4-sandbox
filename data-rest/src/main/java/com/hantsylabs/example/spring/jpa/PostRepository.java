@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.hantsylabs.example.spring.model.Post;
 
-@RepositoryRestResource(collectionResourceRel = "posts", path = "/posts")
+@RepositoryRestResource(collectionResourceRel = "posts", itemResourceRel="post", path = "/posts")
 public interface PostRepository extends JpaRepository<Post, Long> {
 	Post findBySlug(String slug);
 }

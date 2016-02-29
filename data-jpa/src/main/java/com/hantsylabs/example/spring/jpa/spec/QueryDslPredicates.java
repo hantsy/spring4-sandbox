@@ -2,6 +2,7 @@ package com.hantsylabs.example.spring.jpa.spec;
 
 import java.util.Date;
 
+import com.hantsylabs.example.spring.model.QConference;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Predicate;
 

@@ -1,11 +1,124 @@
-<ul xmlns:tiles="http://tiles.apache.org/tags-tiles"
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles"
 	xmlns:spring="http://www.springframework.org/tags"
 	xmlns:form="http://www.springframework.org/tags/form"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" class="row"
 	version="2.0">
+	<c:url var="baseUrl" value="/" />
+	<div class="col-md-4 col-xs-12">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><jsp:text /></span>
+				TODO
+			</div>
+			<div class="panel-body">
+				<p>Tasks newly added in the backlog.</p>
+			</div>
 
-	<c:forEach var="task" begin="0" items="${tasks}">
-		<li>${task.name}, ${task.description}</li>
-	</c:forEach>
-</ul>
+			<!-- List group -->
+			<c:if test="${not empty todotasks}">
+				<ul id="todotasks" class="list-group">
+					<c:forEach var="task" begin="0" items="${todotasks}">
+						<li class="list-group-item">
+							<h4>
+								<span>#${task.id} ${task.name}</span> <span class="pull-right">
+									<c:url var="taskUrl" value="tasks/${task.id}" /> <c:url
+										var="taskEditUrl" value="tasks/${task.id}/edit" /> <a
+									href="${taskUrl}"> <span class="glyphicon glyphicon-file"
+										aria-hidden="true"><jsp:text /></span>
+								</a> <a href="${taskEditUrl}"> <span
+										class="glyphicon glyphicon-pencil" aria-hidden="true"><jsp:text /></span>
+								</a>
+								</span>
+							</h4>
+							<p>${task.description}</p>
+							<p>
+								<c:url var="markDoingUrl"
+									value="/tasks/${task.id}?action=MARK_DOING" />
+							<form action="${markDoingUrl}" method="post">
+								<input type="hidden" name="_method" value="PUT"></input>
+								<button type="submit" class="btn btn-sm btn-primary">
+									<span class="glyphicon glyphicon-play" aria-hidden="true"><jsp:text /></span>
+									START
+								</button>
+							</form>
+							</p>
+						</li>
+					</c:forEach>
+				</ul>
+			</c:if>
+		</div>
+	</div>
+
+	<div id="doingtasks" class="col-md-4 col-xs-12">
+		<div class="panel panel-info">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"><jsp:text /></span>
+				WORK IN PROGRESS
+			</div>
+			<div class="panel-body">
+				<p>Tasks had been assigned and started.</p>
+			</div>
+
+			<!-- List group -->
+			<c:if test="${not empty doingtasks}">
+				<ul id="doingtasks" class="list-group">
+					<c:forEach var="task" begin="0" items="${doingtasks}">
+						<li class="list-group-item">
+							<h4>#${task.id} ${task.name}</h4>
+							<p>${task.description}</p>
+							<p>
+								<c:url var="markDoneUrl"
+									value="/tasks/${task.id}?action=MARK_DONE" />
+							<form action="${markDoneUrl}" method="post">
+								<input type="hidden" name="_method" value="PUT"></input>
+								<button type="submit" class="btn btn-sm btn-success">
+									<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"><jsp:text /></span>
+									DONE
+								</button>
+							</form>
+							</p>
+						</li>
+					</c:forEach>
+				</ul>
+			</c:if>
+		</div>
+	</div>
+	<div id="donetasks" class="col-md-4 col-xs-12">
+		<div class="panel panel-success">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"><jsp:text /></span>
+				DONE
+			</div>
+			<div class="panel-body">
+				<p>Tasks had been done successfully.</p>
+			</div>
+
+			<!-- List group -->
+			<c:if test="${not empty donetasks}">
+				<ul id="donetasks" class="list-group">
+					<c:forEach var="task" begin="0" items="${donetasks}">
+						<li class="list-group-item">
+							<h4>#${task.id} ${task.name}</h4>
+							<p>${task.description}</p>
+							<p>
+								<c:url var="deleteUrl" value="/tasks/${task.id}" />
+							<form action="${deleteUrl}" method="post">
+								<input type="hidden" name="_method" value="DELETE"></input>
+								<button type="submit" class="btn btn-sm btn-danger">
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"><jsp:text /></span>
+									DELETE
+								</button>
+							</form>
+							</p>
+						</li>
+					</c:forEach>
+				</ul>
+			</c:if>
+		</div>
+	</div>
+</div>

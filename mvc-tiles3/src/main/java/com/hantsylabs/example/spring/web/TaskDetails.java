@@ -11,6 +11,7 @@ public class TaskDetails implements Serializable {
 	private Long id;
 	private String name;
 	private String description;
+	private String status;
 	private Date createdDate;
 	private Date lastModifiedDate;
 	
@@ -29,6 +30,14 @@ public class TaskDetails implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDescription() {

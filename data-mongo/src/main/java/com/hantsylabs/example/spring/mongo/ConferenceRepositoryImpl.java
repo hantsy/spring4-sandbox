@@ -34,7 +34,7 @@ public class ConferenceRepositoryImpl implements ConferenceRepositoryCustom {
 				Query.query(Criteria.where("id").is(id)),
 				Update.update("description", description), Conference.class);
 		
-		log.debug("result @"+result.getField("description"));
+		log.debug("result @"+result.getN());
 	}
 
 }

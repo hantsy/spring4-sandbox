@@ -3,6 +3,7 @@ package com.hantsylabs.example.spring.config;
 import javax.servlet.Filter;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 @Order(0)
@@ -28,13 +29,15 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[] { "/" };
     }
 
-    @Override
-    protected Filter[] getServletFilters() {
-        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-        encodingFilter.setEncoding("UTF-8");
-        encodingFilter.setForceEncoding(true);
+	@Override
+	protected Filter[] getServletFilters() {
+		HiddenHttpMethodFilter httpMethodFilter = new HiddenHttpMethodFilter();
 
-        return new Filter[] { encodingFilter };
-    }
+		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+		encodingFilter.setEncoding("UTF-8");
+		encodingFilter.setForceEncoding(true);
+
+		return new Filter[] { httpMethodFilter, encodingFilter };
+	}
 
 }

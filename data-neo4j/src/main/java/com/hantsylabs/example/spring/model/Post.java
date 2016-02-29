@@ -22,6 +22,9 @@ public class Post {
 
 	@Property(name = "created_at")
 	private Date createdAt;
+	
+	@Property(name="slug")
+	private String slug;
 
 	public Long getId() {
 		return id;

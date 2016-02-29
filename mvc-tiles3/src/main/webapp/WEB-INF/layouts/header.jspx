@@ -1,27 +1,30 @@
-<div  xmlns:jsp="http://java.sun.com/JSP/Page"
+<nav xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:spring="http://www.springframework.org/tags" 
-	class="container" 
+	xmlns:spring="http://www.springframework.org/tags"
+	class="navbar navbar-inverse navbar-fixed-top" role="navigation"
 	version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
-	<c:url var="baseUrl" value="/"/>
-	<div class="navbar-header" >
+	<c:url var="baseUrl" value="/" />
+	<c:url var="tasks" value="/tasks" />
+	<c:url var="taskNew" value="/tasks/add" />
+	<div class="container">
+		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${baseUrl}">Spring MVC with Apache Tiles3</a>
+			<a class="navbar-brand" href="${baseUrl}">Spring MVC with JSP and
+				Apache Tiles3</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="${tasks}">All Tasks</a></li>
+				<li><a href="${taskNew}"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"><jsp:text/></span>New Task</a></li>
+			</ul>
+		</div>
 	</div>
-
-	<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav" >
-			<li><a href="#/posts">All Tasks</a></li>
-			<li><a href="#/posts/new">New Task</a></li>
-		</ul>
-	</div>
-</div>
+</nav>

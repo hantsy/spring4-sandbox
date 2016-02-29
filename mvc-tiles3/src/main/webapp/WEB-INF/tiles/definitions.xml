@@ -7,15 +7,24 @@
 		<put-attribute name="footer" value="/WEB-INF/layouts/footer.jspx" />
 	</definition>
 	<definition name="tasks" extends="default">
+		<put-attribute name="pageTitle" value="TASK LIST" />
 		<put-attribute name="body" value="/WEB-INF/views/tasks.jspx" />
 	</definition>
 	<definition name="add" extends="default">
+		<put-attribute name="pageTitle" value="ADD TASK" />
 		<put-attribute name="body" value="/WEB-INF/views/add.jspx" />
 	</definition>
 	<definition name="edit" extends="default">
+		<put-attribute name="pageTitle" value="EDIT TASK" />
 		<put-attribute name="body" value="/WEB-INF/views/edit.jspx" />
 	</definition>
 	<definition name="details" extends="default">
+		<put-attribute name="pageTitle" value="TASK DETAILS" />
 		<put-attribute name="body" value="/WEB-INF/views/details.jspx" />
+	</definition>
+
+	<definition name="error" extends="default">
+		<put-attribute name="pageTitle" value="EXCEPTIONS" />
+		<put-attribute name="body" value="/WEB-INF/views/error.jspx" />
 	</definition>
 </tiles-definitions>

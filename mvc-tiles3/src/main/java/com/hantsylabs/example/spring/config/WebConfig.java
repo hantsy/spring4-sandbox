@@ -75,6 +75,9 @@ public class WebConfig extends SpringDataWebConfiguration {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry
+			.addResourceHandler("/**")
+			.addResourceLocations("classpath:/static/");
+		registry
 			.addResourceHandler("webjars/**")
 	        .addResourceLocations("classpath:META-INF/resources/webjars/");
 	}
