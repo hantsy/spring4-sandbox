@@ -4,3 +4,10 @@ body {
   padding-top: 60px;
 }
 
+dl dt{
+	font-weight: bold;
+}
+dl dt, dl dd{
+	padding: 10px !important;
+}
+

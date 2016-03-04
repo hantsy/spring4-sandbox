@@ -18,7 +18,6 @@ public class TaskForm implements Serializable {
 	@NotEmpty	
 	private String name;
 
-	@NotEmpty
 	@Size(min = 10, max = 200)
 	private String description;
 

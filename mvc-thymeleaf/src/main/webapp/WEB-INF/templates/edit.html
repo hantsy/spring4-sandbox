@@ -1,42 +1,48 @@
-<#assign spring=JspTaglibs["/WEB-INF/spring.tld"]/>
-<#assign form=JspTaglibs["/WEB-INF/spring-form.tld"]/>
-<#import "template.ftl" as t/>
-<@t.page title="Spring MVC Sample with Freemarker">
-<div class="page-header">
-	<h1> Edit Task #${task.id}</h1>
-</div>
-<@spring.url var="actionUrl" value="/tasks/${task.id}"/>
-<@form.form class="form" role="form" commandName="task" action="${actionUrl}" method="post">
-		  <input type="hidden" name="_method" value="PUT"/>
-		  
-		  <div class="form-group <@spring.hasBindErrors name='task'><#if errors.hasFieldErrors('name')>has-error</#if></@spring.hasBindErrors>">
-		    <label class="control-label" for="name"> Task Name:</label>
-            
-		    <@form.input 
-		    	id="name" 
-		     type="text" 
-		     cssClass="form-control" 
-             path="name"></@form.input>
-            <div class="help-block">
-            	<@form.errors path = "name"/>
-            </div>
-		  </div>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template">
+<head>
+<title>Update Task</title>
+</head>
+<body>
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<div layout:fragment="content">
+		<div class="page-header">
+			<h1>
+				Edit Task #<span th:text="${task.id}" th:remove="tag"></span>
+			</h1>
+		</div>
+		<form class="form" role="form" th:object="${task}"
+			th:action="@{/tasks/{id}(id=${task.id})}" method="post">
 
-		  <div class="form-group <@spring.hasBindErrors name='task'><#if errors.hasFieldErrors('description')>has-error</#if></@spring.hasBindErrors>">
-            
-		    <label class="control-label" for="description">Description:</label>
-		    <@form.textarea 
-		    id="description" 
-		    cssClass="form-control" 
-		    path="description" 
-            rows="8"></@form.textarea>
-            <div class="help-block">
-            	<@form.errors path = "description"/>
-            </div>
-		  </div>
-	
-		 <div class="form-group">
-		  	<button type="submit" class="btn btn-lg btn-primary">Update Task</button>
-		 </div>
-</@form.form>
-</@t.page>
+			<input type="hidden" name="_method" value="PUT" />
+
+			<div class="form-group"
+				th:classappend="${#fields.hasErrors('name')} ? 'has-error'">
+				<label class="control-label" for="name"> Task Name:</label> <input
+					id="name" type="text" class="form-control" th:field="*{name}"></input>
+				<div class="help-block">
+					<p th:errors="*{name}" th:remove="tag"></p>
+				</div>
+			</div>
+
+			<div class="form-group"
+				th:classappend="${#fields.hasErrors('description')} ? 'has-error'">
+
+				<label class="control-label" for="description">Description:</label>
+				<textarea id="description" class="form-control"
+					th:field="*{description}" rows="8"></textarea>
+				<div class="help-block">
+					<p th:errors="*{description}" th:remove="tag"></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-lg btn-primary">Update
+					Task</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

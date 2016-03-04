@@ -1,20 +1,34 @@
-<#import "/spring.ftl" as spring/>
-<#import "template.ftl" as t/>
-<@t.page title="Spring MVC Sample with Freemarker">
-<div class="page-header">
-	<h1>Details of Task  #${details.id}</h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt> Task Name:</dt>
-  <dd> ${details.name}</dd>
-  <dt> Task Description:</dt>
-  <dd> ${details.description}</dd>
-  <dt> Status:</dt>
-  <dd> ${details.status}</dd>
-  <dt> Created At:</dt>
-  <dd> ${details.createdDate}</dd>
-  <dt> Last Modified At:</dt>
-  <dd> ${details.lastModifiedDate}</dd>
-</dl>
-</@t.page>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template">
+<head>
+<title>Task Details</title>
+</head>
+<body>
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<div layout:fragment="content">
+		<div class="page-header">
+			<h1>
+				Details of Task # <span th:text="${details.id}" th:remove="tag"></span>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<dl class="dl-horizontal">
+					<dt>Task Name:</dt>
+					<dd th:text="${details.name}"></dd>
+					<dt>Task Description:</dt>
+					<dd th:text="${details.description}"></dd>
+					<dt>Status:</dt>
+					<dd th:text="${details.status}"></dd>
+					<dt>Created At:</dt>
+					<dd th:text="${#dates.format(details.createdDate, 'dd/MM/yyyy')}"></dd>
+					<dt>Last Modified At:</dt>
+					<dd th:text="${details.lastModifiedDate}"></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

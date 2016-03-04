@@ -182,6 +182,12 @@
 			<artifactId>thymeleaf-spring4</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+
 		<!-- dependency injection jsr 330 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -195,6 +201,25 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<!--webjars resources -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>font-awesome</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-material-design</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
