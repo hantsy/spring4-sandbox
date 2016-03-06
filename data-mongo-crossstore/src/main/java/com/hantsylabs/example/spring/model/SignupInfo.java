@@ -14,7 +14,7 @@ public class SignupInfo {
 	private String id;
 
 	@DBRef
-	private List<Signup> signups = new ArrayList<Signup>();
+	private List<Signup> signups = new ArrayList<>();
 
 	public String getId() {
 		return id;

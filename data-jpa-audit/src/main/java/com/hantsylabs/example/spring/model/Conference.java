@@ -47,7 +47,7 @@ public class Conference extends AbstractAuditable<User, Long>{
 	private Address address;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "conference")
-	private Set<Signup> signups = new HashSet<Signup>();
+	private Set<Signup> signups = new HashSet<>();
 
 	public String getName() {
 		return this.name;
