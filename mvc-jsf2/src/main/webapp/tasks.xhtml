@@ -1,0 +1,124 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/layout/template.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{taskHome.init()}" type="preRenderView" />
+		</f:metadata>
+	</ui:define>
+	<ui:define name="pageTitle"> TASK LIST</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<div class="row">
+				<c:set var="baseUrl" value="#{faceContext.request.contextPath}" />
+				<div class="col-md-4 col-xs-12">
+					<div class="panel panel-default">
+						<!-- Default panel contents -->
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+							TODO
+						</div>
+						<div class="panel-body">
+							<p>Tasks newly added in the backlog.</p>
+						</div>
+
+						<!-- List group -->
+						<ui:fragment rendered="#{not empty taskHome.todotasks}">
+							<ul id="todotasks" class="list-group">
+								<ui:repeat var="task" value="#{taskHome.todotasks}">
+									<li class="list-group-item">
+										<h4>
+											<span>##{task.id} #{task.name}</span> 
+											<span class="pull-right">
+												<h:link outcome="/details.xhtml">
+													<f:param name="id" value="#{task.id}"></f:param>
+													<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+												</h:link> <h:link outcome="/edit.xhtml">
+													<f:param name="id" value="#{task.id}"></f:param>
+													<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+												</h:link>
+											</span>
+										</h4>
+										<p>#{task.description}</p>
+										<p>
+											<h:commandLink action="#{taskHome.markTaskDoing(task.id)}"
+												styleClass="btn btn-sm btn-success" value="START">
+												<span class="glyphicon glyphicon-play" aria-hidden="true"></span>									
+											</h:commandLink>
+										</p>
+									</li>
+								</ui:repeat>
+							</ul>
+						</ui:fragment>
+					</div>
+				</div>
+
+				<div id="doingtasks" class="col-md-4 col-xs-12">
+					<div class="panel panel-info">
+						<!-- Default panel contents -->
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							WORK IN PROGRESS
+						</div>
+						<div class="panel-body">
+							<p>Tasks had been assigned and started.</p>
+						</div>
+
+						<!-- List group -->
+						<ui:fragment test="#{not empty taskHome.doingtasks}">
+							<ul id="doingtasks" class="list-group">
+								<ui:repeat var="task" value="#{taskHome.doingtasks}">
+									<li class="list-group-item">
+										<h4>##{task.id} #{task.name}</h4>
+										<p>#{task.description}</p>
+										<p>
+											<h:commandLink action="#{taskHome.markTaskDone(task.id)}"
+												styleClass="btn btn-sm btn-info">
+												<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+													DONE
+												</h:commandLink>
+										</p>
+									</li>
+								</ui:repeat>
+							</ul>
+						</ui:fragment>
+					</div>
+				</div>
+				<div id="donetasks" class="col-md-4 col-xs-12">
+					<div class="panel panel-success">
+						<!-- Default panel contents -->
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+							DONE
+						</div>
+						<div class="panel-body">
+							<p>Tasks had been done successfully.</p>
+						</div>
+
+						<!-- List group -->
+						<ui:fragment rendered="#{not empty taskHome.donetasks}">
+							<ul id="donetasks" class="list-group">
+								<ui:repeat var="task" value="#{taskHome.donetasks}">
+									<li class="list-group-item">
+										<h4>##{task.id} #{task.name}</h4>
+										<p>#{task.description}</p>
+										<p>
+
+											<h:commandLink action="#{taskHome.deleteTask(task.id)}"
+												styleClass="btn btn-sm btn-danger">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> DELETE
+											</h:commandLink>
+										</p>
+									</li>
+								</ui:repeat>
+							</ul>
+						</ui:fragment>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

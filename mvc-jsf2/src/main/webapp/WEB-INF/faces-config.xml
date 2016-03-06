@@ -1,9 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<faces-config version="2.2"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-   	<application>
-   		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-   	</application>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+	<factory>
+		<exception-handler-factory>com.hantsylabs.example.spring.faces.DefaultExceptionHandlerFactory</exception-handler-factory>
+	</factory>
+
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>zh</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>messages</var>
+		</resource-bundle>
+	</application>
+
+	<lifecycle>
+		<phase-listener>com.hantsylabs.example.spring.faces.MessageHandler</phase-listener>
+		<phase-listener>com.hantsylabs.example.spring.faces.RequestLoggingPhaseListener</phase-listener>
+	</lifecycle>
 </faces-config>

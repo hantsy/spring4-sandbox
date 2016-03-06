@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<f:view contentType="text/html" encoding="UTF-8">
+
+	<c:set var="baseUrl" value="#{request.contextPath}" />
+	<ui:insert name="metadata"></ui:insert>
+	<h:head>
+		<title>Spring MVC with JSF</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<!-- Bootstrap core CSS -->
+		<link href="${baseUrl}/webjars/bootstrap/3.3.5/css/bootstrap.min.css"
+			rel="stylesheet" media="screen" />
+		<!-- Font awesome CSS -->
+		<link
+			href="${baseUrl}/webjars/font-awesome/4.3.0/css/font-awesome.min.css"
+			rel="stylesheet" media="screen" />
+		<h:outputStylesheet library="css" name="main.css"></h:outputStylesheet>
+		<link
+			href="${baseUrl}/webjars/bootstrap-material-design/0.3.0/css/material.min.css"
+			rel="stylesheet" />
+		<link
+			href="${baseUrl}/webjars/bootstrap-material-design/0.3.0/css/ripples.min.css"
+			rel="stylesheet" />
+		<link
+			href="${baseUrl}/webjars/bootstrap-material-design/0.3.0/css/roboto.min.css"
+			rel="stylesheet" />
+		<![CDATA[
+		<!--[if lt IE 9]>
+		      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		    <![endif]-->
+   		]]>
+   		
+   		<ui:insert name="headIncludes"></ui:insert>
+	</h:head>
+
+	<h:body>
+		<ui:include src="/WEB-INF/layout/nav.xhtml" />
+		<h:panelGroup layout="block" styleClass="container">
+			<ui:include src="/WEB-INF/layout/alert.xhtml" />
+			<h:panelGroup layout="block" styleClass="page-header">
+				<h1><ui:insert name="pageTitle"></ui:insert></h1>
+			</h:panelGroup>
+			<ui:insert name="content"/>
+		</h:panelGroup>
+
+		<ui:include src="/WEB-INF/layout/footer.xhtml"/>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/jquery/2.1.3/jquery.min.js">
+		</script>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/bootstrap/3.3.5/js/bootstrap.min.js">
+		</script>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/jquery/2.1.3/jquery.min.js">
+		</script>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/bootstrap/3.3.5/js/bootstrap.min.js">
+		</script>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/bootstrap-material-design/0.3.0/js/material.min.js">
+		</script>
+		<script type="text/javascript"
+			src="${baseUrl}/webjars/bootstrap-material-design/0.3.0/js/ripples.min.js">
+		</script>
+		<ui:insert name="bodyIncludes"></ui:insert>
+	</h:body>
+</f:view>
+</html>

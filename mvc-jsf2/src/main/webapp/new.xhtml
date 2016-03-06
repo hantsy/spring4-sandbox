@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/layout/template.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{editTaskAction.init()}" type="preRenderView" />
+		</f:metadata>
+	</ui:define>
+	<ui:define name="pageTitle"> ADD TASK</ui:define>
+	<ui:define name="content">
+		<div class="row">
+			<div class="col-md-12">
+				<h:form id="form" name="form" role="form" class="form" method="post">
+					<div
+						class="form-group #{not empty facesContext.getMessageList('form:name')?'has-error':''}">
+						<h:outputLabel styleClass="control-label" for="name">Task Name:</h:outputLabel>
+
+						<h:inputText id="name" name="name" type="text"
+							styleClass="form-control" value="#{editTaskAction.task.name}"
+							required="true" requiredMessage="Task name is required.">
+							 <f:passThroughAttribute name="placeholder" value="Type task name here..."/>
+						</h:inputText>
+						<div class="help-block">
+							<h:message for="name" showDetail="false" showSummary="true" />
+						</div>
+					</div>
+					<div
+						class="form-group #{not empty facesContext.getMessageList('form:description')?'has-error':''}">
+						<h:outputLabel styleClass="control-label" for="description">Task
+							Description:</h:outputLabel>
+						<h:inputTextarea id="description" name="description"
+							styleClass="form-control" rows="8"
+							value="#{editTaskAction.task.description}" required="true"
+							requiredMessage="Description is required."
+							p:placeholder="Describe the task content here..." />
+						<div class="help-block">
+							<h:message for="description" showDetail="false"
+								showSummary="true" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<h:commandButton id="submitTask" type="submit"
+							styleClass="btn btn-lg btn-primary"
+							action="#{editTaskAction.save()}" value="Add Task"></h:commandButton>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

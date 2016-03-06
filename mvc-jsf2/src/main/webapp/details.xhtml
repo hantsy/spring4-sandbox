@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/layout/template.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewParam name="id" value="#{viewTaskAction.taskId}"></f:viewParam>
+			<f:viewAction action="#{viewTaskAction.init()}" />
+		</f:metadata>
+	</ui:define>
+	<ui:define name="pageTitle"> TASK DETAILS</ui:define>
+	<ui:define name="content">
+		<div class="row">
+			<div class="col-md-12">
+				<dl class="dl-horizontal">
+					<dt>Task Name:</dt>
+					<dd>#{viewTaskAction.task.name}</dd>
+					<dt>Task Description:</dt>
+					<dd>#{viewTaskAction.task.description}</dd>
+					<dt>Status:</dt>
+					<dd>#{viewTaskAction.task.status}</dd>
+					<dt>Created At:</dt>
+					<dd>#{viewTaskAction.task.createdDate}</dd>
+					<dt>Last Modified At:</dt>
+					<dd>#{viewTaskAction.task.lastModifiedDate}</dd>
+				</dl>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+

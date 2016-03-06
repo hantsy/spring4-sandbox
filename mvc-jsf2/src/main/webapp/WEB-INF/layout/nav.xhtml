@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			
+			<h:link styleClass="navbar-brand" outcome="/tasks.xhtml" >Spring MVC with JSF</h:link>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#{request.contextPath}/tasks.xhtml" >All Tasks</a></li>
+				<li><a href="#{request.contextPath}/new.xhtml"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Task</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+</ui:composition>
