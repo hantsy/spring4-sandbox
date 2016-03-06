@@ -10,7 +10,7 @@ public class AlertMessage implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	enum Type {
-		success, warning, danger, info
+		SUCCESS, WARNING, DANGER, INFO
 	}
 
 	private Type type;
@@ -40,28 +40,28 @@ public class AlertMessage implements Serializable {
 
 	public static AlertMessage info(String text) {
 		AlertMessage msg = new AlertMessage();
-		msg.setType(Type.info);
+		msg.setType(Type.INFO);
 		msg.setText(text);
 		return msg;
 	}
 
 	public static AlertMessage success(String text) {
 		AlertMessage msg = new AlertMessage();
-		msg.setType(Type.success);
+		msg.setType(Type.SUCCESS);
 		msg.setText(text);
 		return msg;
 	}
 
 	public static AlertMessage danger(String text) {
 		AlertMessage msg = new AlertMessage();
-		msg.setType(Type.danger);
+		msg.setType(Type.DANGER);
 		msg.setText(text);
 		return msg;
 	}
 
 	public static AlertMessage warning(String text) {
 		AlertMessage msg = new AlertMessage();
-		msg.setType(Type.warning);
+		msg.setType(Type.WARNING);
 		msg.setText(text);
 		return msg;
 	}
