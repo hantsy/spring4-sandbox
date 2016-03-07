@@ -3,6 +3,7 @@ package com.hantsylabs.example.spring.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.web.jsf.FacesContextUtils;
 
 import com.hantsylabs.example.spring.jpa.TaskRepository;
 import com.hantsylabs.example.spring.model.Status;
@@ -93,6 +95,9 @@ public class TaskHome {
 
 		// retrieve all tasks
 		retrieveAllTasks();
+		
+		FacesMessage deleteInfo= new FacesMessage(FacesMessage.SEVERITY_WARN, "Task is deleted!",  "Task is deleted!");
+		FacesContext.getCurrentInstance().addMessage(null, deleteInfo);
 	}
 
 	public void markTaskDoing(Long id) {

@@ -2,6 +2,7 @@ package com.hantsylabs.example.spring.web;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -69,6 +70,9 @@ public class EditTaskAction implements Serializable {
 	public String save() {
 		log.debug("saving task@" + task);
 		this.task = taskRepository.save(task);
+		FacesMessage info= new FacesMessage(FacesMessage.SEVERITY_INFO, "Task is saved successfully!",   "Task is saved successfully!");
+		FacesContext.getCurrentInstance().addMessage(null, info);
+		
 		return "/tasks.xhtml?faces-redirect=true";
 	}
 

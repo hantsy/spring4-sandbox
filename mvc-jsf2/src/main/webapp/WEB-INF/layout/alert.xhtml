@@ -1,26 +1,14 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
-<ui:fragment rendered="#{not empty facesContext.messageList}">
-					<div class="row-fluid">
-						<h:messages id="messages" layout="vertical" globalOnly="true"
-							styleClass="unstyled" showSummary="true" showDetail="false"
-							errorClass="alert alert-error" infoClass="alert alert-info"
-							warnClass="alert alert-warning" />
-					</div>
-				</ui:fragment>
 	<ui:fragment rendered="#{not empty facesContext.messageList}">
-		<div class="alert alert-${flashMessage.type} alert-dismissible"
-			role="alert">
-			<button type="button" class="close" data-dismiss="alert"
-				aria-label="Close">
-				<span aria-hidden="true">
-					<![CDATA[&times;]]>
-				</span>
-			</button>
-			<p>${flashMessage.text}</p>
-		</div>
+		<p>
+			<h:messages id="messages" layout="vertical" globalOnly="true"
+				styleClass="list-unstyled" showSummary="true" showDetail="false"
+				errorClass="alert alert-error" infoClass="alert alert-info"
+				warnClass="alert alert-warning" />
+		</p>
 	</ui:fragment>
-
 </ui:composition>
