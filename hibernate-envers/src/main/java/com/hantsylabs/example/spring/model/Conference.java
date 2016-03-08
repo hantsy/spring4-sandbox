@@ -62,7 +62,7 @@ public class Conference implements Serializable {
 	private Address address;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "conference")
-	private Set<Signup> signups = new HashSet<Signup>();
+	private Set<Signup> signups = new HashSet<>();
 
 
 	public Long getVersion() {

@@ -70,7 +70,7 @@ public class TaskController {
 		headers.setLocation(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/tasks/{id}")
 				.buildAndExpand(task.getId()).toUri());
 
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+		return new ResponseEntity<>(headers, HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "!action")
@@ -87,7 +87,7 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "action=MARK_DOING")
@@ -103,7 +103,7 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "action=MARK_DONE")
@@ -119,7 +119,7 @@ public class TaskController {
 
 		taskRepository.save(task);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -140,7 +140,7 @@ public class TaskController {
 
 		log.debug("task details@" + details);
 
-		return new ResponseEntity<TaskDetails>(details, HttpStatus.OK);
+		return new ResponseEntity<>(details, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -154,7 +154,7 @@ public class TaskController {
 
 		taskRepository.delete(id);
 
-		return new ResponseEntity<Task>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 	@ExceptionHandler(value = { TaskNotFoundException.class })

@@ -47,7 +47,7 @@ public class SimpleJdbcConferenceDaoImpl implements ConferenceDao {
 		}
 
 		public Long go() {
-			Map<String, Object> params = new HashMap<String, Object>();
+			Map<String, Object> params = new HashMap<>();
 			params.put("name", conference.getName());
 			params.put("slug", conference.getSlug());
 			params.put("description", conference.getDescription());
