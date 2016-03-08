@@ -17,8 +17,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.htmlunit.MockMvcWebClientBuilder;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlButton;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
@@ -44,6 +46,7 @@ public class MockMvcWebClientCreateTaskTests {
 	public void setUp() throws Exception {
 		webClient = MockMvcWebClientBuilder
 				.webAppContextSetup(context)
+				.withDelegate(new WebClient(BrowserVersion.CHROME))
 				//.webAppContextSetup(context, springSecurity())
 				// for illustration only - defaults to ""
 				.contextPath("")
@@ -66,7 +69,7 @@ public class MockMvcWebClientCreateTaskTests {
 		nameInput.setValueAttribute("My first task");
 		HtmlTextArea descriptionInput = createTaskPage.getHtmlElementById("description");
 		descriptionInput.setText("Description of my first task");
-		HtmlSubmitInput submit = form.getOneHtmlElementByAttribute("input", "type", "submit");
+		HtmlButton submit = form.getOneHtmlElementByAttribute("button", "type", "submit");
 		HtmlPage taskListPage = submit.click();
 
 		Assertions.assertThat(taskListPage.getUrl().toString()).endsWith("/tasks");
