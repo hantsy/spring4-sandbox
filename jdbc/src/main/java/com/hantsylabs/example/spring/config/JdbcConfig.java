@@ -28,23 +28,17 @@ public class JdbcConfig {
 	
 	@Bean 
 	public DataSourceTransactionManager transactionManager(DataSource dataSource) {
-		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource);
-		
-		return transactionManager;
+		return new DataSourceTransactionManager(dataSource);		
 	}
 	
 	@Bean
 	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-		JdbcTemplate jdbcTemplate= new JdbcTemplate(dataSource);
-		
-		return jdbcTemplate;
+		return new JdbcTemplate(dataSource);
 	}
 	
 	@Bean 
 	public NamedParameterJdbcTemplate namedParameterJdbcTemplate( DataSource dataSource) {
-		NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-		
-		return namedParameterJdbcTemplate;
+		return new NamedParameterJdbcTemplate(dataSource);
 	}
 
 
