@@ -18,13 +18,11 @@ import com.hantsylabs.example.spring.test.webdriver.pages.TaskListPage;
 @RunWith(BlockJUnit4ClassRunner.class)
 public class WebDriverCreateTaskITests {
 
-	private Task expectedTask = new MockDataConfig().createTask();
-
 	WebDriver driver;
 
 	@Before
 	public void setUp() throws Exception {
-		driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_38);
+		driver = new HtmlUnitDriver(BrowserVersion.CHROME);
 	}
 
 	@After

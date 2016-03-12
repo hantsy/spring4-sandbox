@@ -26,7 +26,6 @@ import com.hantsylabs.example.spring.model.Conference;
  * @author hantsy
  */
 @Configuration
-//@EnableBatchProcessing
 public class JobConfig {
 
 	@Autowired
@@ -34,42 +33,43 @@ public class JobConfig {
 
 	@Autowired
 	private StepBuilderFactory stepBuilderFactory;
-	
+
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
-	
+
 	@Autowired
 	private ResourceLoader resourceLoader;
-	
+
 	@Autowired
 	private DataSource dataSource;
-	
+
 	@PostConstruct
-	public void initialize(){
-		ResourceDatabasePopulator populator=new ResourceDatabasePopulator();
+	public void initialize() {
+		ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
 		populator.setContinueOnError(true);
 		populator.addScript(resourceLoader.getResource("classpath:/org/springframework/batch/core/schema-h2.sql"));
-		
+
 		DatabasePopulatorUtils.execute(populator, dataSource);
 	}
-	
+
 	@Bean
-	@JobScope
-	public  ConferenceItemReader itemReader() {
-		return new ConferenceItemReader(entityManagerFactory, "select c from Conference	");
+	@StepScope
+	public ConferenceItemReader itemReader() {
+		return new ConferenceItemReader(entityManagerFactory, "select c from Conference	c");
 	}
 
 	@Bean
 	@StepScope
 	public ConferenceItemWriter itemWriter() {
-		ConferenceItemWriter itemWriter = new ConferenceItemWriter();
-		return itemWriter;
+		return new ConferenceItemWriter();
 	}
 
 	@Bean
+	@JobScope 
 	public Step step1() {
-		return stepBuilderFactory.get("step1")
-				.<Conference, Conference>chunk(5)
+		return stepBuilderFactory
+				.get("step1")
+				.<Conference, Conference> chunk(5)
 				.reader(itemReader())
 				.writer(itemWriter())
 				.build();
@@ -77,7 +77,8 @@ public class JobConfig {
 
 	@Bean
 	public Job javaJob() {
-		return jobBuilderFactory.get("javaJob")
+		return jobBuilderFactory
+				.get("javaJob")
 				.start(step1())
 				.build();
 	}

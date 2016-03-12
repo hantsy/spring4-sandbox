@@ -14,7 +14,7 @@ import com.hantsylabs.example.spring.dao.ConferenceDao;
 import com.hantsylabs.example.spring.model.Conference;
 
 @Repository
-@Transactional(transactionManager="transactionManager")
+@Transactional()
 public class JpaConferenceDaoImpl implements ConferenceDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(JpaConferenceDaoImpl.class);

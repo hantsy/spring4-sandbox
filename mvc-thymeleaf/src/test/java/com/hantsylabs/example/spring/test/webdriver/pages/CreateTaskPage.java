@@ -7,13 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateTaskPage extends AbstractPage {
 
-	@FindBy(id = "name")
 	private WebElement name;
 
-	@FindBy(id = "description")
 	private WebElement description;
 
-	@FindBy(id = "submitTask")
+	@FindBy(id="submitTask")
 	private WebElement submit;
 
 	public CreateTaskPage(WebDriver driver) {

@@ -22,6 +22,7 @@ import org.springframework.batch.support.transaction.ResourcelessTransactionMana
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
 
 
@@ -105,6 +106,7 @@ public class JpaBatchConfigurer implements BatchConfigurer {
 	private JobLauncher createJobLauncher() throws Exception {
 		SimpleJobLauncher jobLauncher = new SimpleJobLauncher();
 		jobLauncher.setJobRepository(jobRepository);
+		jobLauncher.setTaskExecutor( new SimpleAsyncTaskExecutor());
 		jobLauncher.afterPropertiesSet();
 		return jobLauncher;
 	}
@@ -114,6 +116,7 @@ public class JpaBatchConfigurer implements BatchConfigurer {
 		factory.setIsolationLevelForCreate("ISOLATION_SERIALIZABLE");
 		factory.setDataSource(dataSource);
 		factory.setTransactionManager(transactionManager);
+		factory.setValidateTransactionState(false);
 		factory.afterPropertiesSet();
 		return factory.getObject();
 	}

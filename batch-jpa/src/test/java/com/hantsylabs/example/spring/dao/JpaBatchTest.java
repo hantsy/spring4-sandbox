@@ -1,6 +1,7 @@
 package com.hantsylabs.example.spring.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -29,7 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hantsylabs.example.spring.config.JobConfig;
@@ -39,8 +40,8 @@ import com.hantsylabs.example.spring.model.Conference;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { JpaConfig.class, JpaBatchConfigurer.class, JobConfig.class })
-@Rollback
-
+@Transactional(transactionManager="transactionManager")
+@Rollback(value=false)
 public class JpaBatchTest {
 
 	private static final Logger log = LoggerFactory.getLogger(JpaBatchTest.class);
@@ -58,7 +59,6 @@ public class JpaBatchTest {
 	}
 
 	@Before
-	//@Transactional
 	public void beforeTestCase() {
 		log.debug("===================before test=====================");
 		Long id = conferenceDao.save(newConference());
@@ -66,7 +66,6 @@ public class JpaBatchTest {
 	}
 
 	@After
-	//@Transactional
 	public void afterTestCase() {
 		log.debug("===================after test=====================");
 		conferenceDao.deleteAll();
@@ -95,16 +94,15 @@ public class JpaBatchTest {
 	}
 
 	@Autowired
-	private Job validJob;
+	private Job javaJob;
 
 	@Autowired
 	private JobLauncher jobLauncher;
 
 	@Test
 	public void jobTest() {
-		JobParametersBuilder builder = new JobParametersBuilder();
 		try {
-			JobExecution execution = jobLauncher.run(validJob, builder.toJobParameters());
+			JobExecution execution = jobLauncher.run(javaJob, new JobParameters());
 			assertEquals(BatchStatus.COMPLETED, execution.getStatus());
 			
 		} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
