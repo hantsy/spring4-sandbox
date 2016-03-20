@@ -16,6 +16,9 @@ public class CreateTaskPage extends AbstractPage {
 
 	@FindBy(css = "#nameField div.help-block")
 	private WebElement titleError;
+	
+	@FindBy(css = "#descField div.help-block")
+	private WebElement descriptionError;
 
 	@FindBy(id = "submitTask")
 	private WebElement submit;
@@ -42,6 +45,12 @@ public class CreateTaskPage extends AbstractPage {
 		log.debug(" title error @" + this.titleError.getText());
 		return this.titleError.getText();
 	}
+	
+	public String getDescriptionError() {
+		log.debug(" description error @" + this.descriptionError.getText());
+		return this.descriptionError.getText();
+	}
+
 
 	public static CreateTaskPage to(WebDriver driver) {
 		get(driver, "tasks/new");

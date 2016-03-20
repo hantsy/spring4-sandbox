@@ -62,5 +62,7 @@ public class MockMvcHtmlUnitWebDriverCreateTaskTests {
 		CreateTaskPage createTask = CreateTaskPage.to(driver);
 		CreateTaskPage createTaskPage = createTask.newTaskWithEmptyFields();		
 		Assertions.assertThat(createTaskPage.getTitleError()).isEqualTo("may not be empty");
+		Assertions.assertThat(createTaskPage.getDescriptionError()).isEqualTo("size must be between 10 and 200");
+		//
 	}
 }
