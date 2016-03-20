@@ -14,7 +14,7 @@
 		<form id="form" class="form" role="form" th:object="${task}"
 			th:action="@{/tasks}" method="post">
 
-			<div
+			<div id="nameField"
 				class="form-group" th:classappend="${#fields.hasErrors('name')} ? 'has-error'">
 				<label class="control-label" for="name"> Task Name:</label> <input
 					id="name" type="text" class="form-control"

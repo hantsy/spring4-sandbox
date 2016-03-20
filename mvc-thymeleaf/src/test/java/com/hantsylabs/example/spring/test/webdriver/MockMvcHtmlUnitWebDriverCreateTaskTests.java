@@ -1,5 +1,6 @@
 package com.hantsylabs.example.spring.test.webdriver;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,15 +53,14 @@ public class MockMvcHtmlUnitWebDriverCreateTaskTests {
 		CreateTaskPage createTask = CreateTaskPage.to(driver);
 		TaskListPage taskList = createTask.newTask( "first task", "description of first task");
 		
-		//Assertions.assertThat(taskList.getErrors()).isEqualTo("Task is created sucessfully!");
-		taskList.pageTitleIs("TASK LIST");
+		Assertions.assertThat(taskList.getErrors()).isEqualTo("Task is created sucessfully!");
+		Assertions.assertThat(taskList.getPageTitle()).isEqualTo("TASK LIST");
 	}
 	
 	@Test
 	public void testCreateTaskWithEmptyFields() {
 		CreateTaskPage createTask = CreateTaskPage.to(driver);
-		CreateTaskPage createTaskPage = createTask.newTaskWithEmptyFields();
-		
-		//Assertions.assertThat(createTaskPage.getErrors()).isEqualTo("Invalid input data!");
+		CreateTaskPage createTaskPage = createTask.newTaskWithEmptyFields();		
+		Assertions.assertThat(createTaskPage.getTitleError()).isEqualTo("may not be empty");
 	}
 }

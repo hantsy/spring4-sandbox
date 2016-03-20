@@ -8,13 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AbstractPage {
-	private final static Logger log=LoggerFactory.getLogger(AbstractPage.class);
+	private final static Logger log = LoggerFactory.getLogger(AbstractPage.class);
 
+	@FindBy(css= "#alert p")
 	WebElement alert;
-	
-	@FindBy(css=".page-header h1")
+
+	@FindBy(css = ".page-header h1")
 	WebElement pageHeader;
-	
+
 	protected final WebDriver driver;
 
 	public AbstractPage(WebDriver driver) {
@@ -22,16 +23,16 @@ public class AbstractPage {
 	}
 
 	public String getErrors() {
-		log.debug("=======alert element ===========@@"+alert.getText());
+		log.debug("=======alert element ===========@@" + alert.getText());
 		return alert.getText();
 	}
-	
-	public void pageTitleIs(String title){	
-		Assert.assertTrue(title.equals(pageHeader.getText().trim()));
+
+	public String getPageTitle() {
+		return pageHeader.getText().trim();
 	}
 
-    static void get(WebDriver driver, String relativeUrl) {
-        String url = System.getProperty("geb.build.baseUrl","http://localhost:8080/") + relativeUrl;
-        driver.get(url);
-    }
+	static void get(WebDriver driver, String relativeUrl) {
+		String url = System.getProperty("geb.build.baseUrl", "http://localhost:8080/") + relativeUrl;
+		driver.get(url);
+	}
 }

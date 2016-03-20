@@ -4,14 +4,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CreateTaskPage extends AbstractPage {
+	private static final Logger log = LoggerFactory.getLogger(CreateTaskPage.class);
 
 	private WebElement name;
 
 	private WebElement description;
 
-	@FindBy(id="submitTask")
+	@FindBy(css = "#nameField div.help-block")
+	private WebElement titleError;
+
+	@FindBy(id = "submitTask")
 	private WebElement submit;
 
 	public CreateTaskPage(WebDriver driver) {
@@ -22,14 +28,19 @@ public class CreateTaskPage extends AbstractPage {
 		this.name.sendKeys(name);
 		this.description.sendKeys(details);
 		this.submit.click();
-		return TaskListPage.to(driver);
+		return PageFactory.initElements(driver, TaskListPage.class);
 	}
 
 	public CreateTaskPage newTaskWithEmptyFields() {
 		this.name.sendKeys("");
 		this.description.sendKeys("");
 		this.submit.click();
-		return CreateTaskPage.to(driver);
+		return PageFactory.initElements(driver, CreateTaskPage.class);
+	}
+
+	public String getTitleError() {
+		log.debug(" title error @" + this.titleError.getText());
+		return this.titleError.getText();
 	}
 
 	public static CreateTaskPage to(WebDriver driver) {
