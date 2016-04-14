@@ -15,13 +15,12 @@
 	<ui:define name="content">
 		<div class="row">
 			<div class="col-md-12">
-				<h:form id="form" name="form" role="form" class="form" method="post">
+				<h:form id="form" role="form" class="form">
 					<div
 						class="form-group #{not empty facesContext.getMessageList('form:name')?'has-error':''}">
 						<h:outputLabel styleClass="control-label" for="name">Task Name:</h:outputLabel>
 
-						<h:inputText id="name" name="name" type="text"
-							styleClass="form-control" value="#{editTaskAction.task.name}"
+						<h:inputText id="name" 							styleClass="form-control" value="#{editTaskAction.task.name}"
 							required="true" requiredMessage="Task name is required.">
 							 <f:passThroughAttribute name="placeholder" value="Type task name here..."/>
 						</h:inputText>
@@ -33,7 +32,7 @@
 						class="form-group #{not empty facesContext.getMessageList('form:description')?'has-error':''}">
 						<h:outputLabel styleClass="control-label" for="description">Task
 							Description:</h:outputLabel>
-						<h:inputTextarea id="description" name="description"
+						<h:inputTextarea id="description" 
 							styleClass="form-control" rows="8"
 							value="#{editTaskAction.task.description}" required="true"
 							requiredMessage="Description is required."

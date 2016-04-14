@@ -1,17 +1,23 @@
-<div class="row" xmlns:jsp="http://java.sun.com/JSP/Page"
-	xmlns:tiles="http://tiles.apache.org/tags-tiles"
-	xmlns:spring="http://www.springframework.org/tags"
-	xmlns:form="http://www.springframework.org/tags/form"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
-	<c:url var="baseUrl" value="/tasks" />
-	<div class="col-md-12">
-		<div class="panel panel-danger">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"><jsp:text/></span>  Error Details</div>
-		  <div class="panel-body">
-		    <p>${ex}</p>
-		  </div>	
-		</div>	
-	</div>
-</div>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="/WEB-INF/layout/template.xhtml">
+
+    <ui:define name="pageTitle"> Psst...something was wrong</ui:define>
+    <ui:define name="content">
+
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="panel panel-danger">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Error Details</div>
+                    <div class="panel-body">
+                        <p>${ex}</p>
+                    </div>	
+                </div>	
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

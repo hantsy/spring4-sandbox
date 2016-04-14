@@ -45,7 +45,9 @@ public class WebDriverCreateTaskITests {
 		CreateTaskPage createTask = CreateTaskPage.to(driver);
 		CreateTaskPage createTaskPage = createTask.newTaskWithEmptyFields();
 
-		Assertions.assertThat(createTaskPage.getErrors()).isEqualTo("Invalid input data!");
+		Assertions.assertThat(createTaskPage.getTitleError()).isEqualTo("may not be empty");
+		Assertions.assertThat(createTaskPage.getDescriptionError()).isEqualTo("size must be between 10 and 200");
+
 	}
 
 }

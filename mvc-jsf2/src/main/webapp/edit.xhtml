@@ -1,64 +1,64 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	template="/WEB-INF/layout/template.xhtml">
-	<ui:define name="metadata">
-		<f:metadata>
-		 	<f:viewParam name="id" value="#{editTaskAction.taskId}">
-		 		<f:validateRequired></f:validateRequired>
-		 	</f:viewParam>
-			<f:event listener="#{editTaskAction.init()}" type="preRenderView" />
-		</f:metadata>
-	</ui:define>
-	<ui:define name="pageTitle"> EDIT TASK ##{editTaskAction.task.id}</ui:define>
-	<ui:define name="content">
-		<div class="row">
-			<div class="col-md-12">
-				<h:form id="form" name="form" role="form" class="form" method="post">
-								<div
-				class="form-group ">
-				<label class="control-label" for="name">Task ID:</label>
-				<div id="id" name="id" type="text" class="form-control-static">#{editTaskAction.task.id}</div>
-			</div>
-					
-					<div
-						class="form-group #{not empty facesContext.getMessageList('form:name')?'has-error':''}">
-						<label class="control-label" for="name">Task Name:</label>
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="id" value="#{editTaskAction.taskId}">
+                <f:validateRequired></f:validateRequired>
+            </f:viewParam>
+            <f:event listener="#{editTaskAction.init()}" type="preRenderView" />
+        </f:metadata>
+    </ui:define>
+    <ui:define name="pageTitle"> EDIT TASK ##{editTaskAction.task.id}</ui:define>
+    <ui:define name="content">
+        <div class="row">
+            <div class="col-md-12">
+                <h:form id="form" role="form" class="form">
+                    <div
+                        class="form-group ">
+                        <label class="control-label" for="name">Task ID:</label>
+                        <div id="id" name="id" type="text" class="form-control-static">#{editTaskAction.task.id}</div>
+                    </div>
 
-						<input jsf:id="name" name="name" type="text"
-							class="form-control" jsf:value="#{editTaskAction.task.name}"
-							jsf:required="true" jsf:requiredMessage="Task name is required."
-							p:placeholder="Task name here..."/>
-						<div class="help-block">
-							<h:message for="name" showDetail="false" showSummary="true" />
-						</div>
-					</div>
-					<div
-						class="form-group #{not empty facesContext.getMessageList('form:description')?'has-error':''}">
-						<h:outputLabel class="control-label" for="description">Task
-							Description:</h:outputLabel>
-						<h:inputTextarea id="description" name="description"
-							class="form-control" rows="8"
-							value="#{editTaskAction.task.description}" required="true"
-							requiredMessage="Description is required."
-							p:placeholder="Describe the task content here..." />
-						<div class="help-block">
-							<h:message for="description" showDetail="false"
-								showSummary="true" />
-						</div>
-					</div>
+                    <div
+                        class="form-group #{not empty facesContext.getMessageList('form:name')?'has-error':''}">
+                        <label class="control-label" for="name">Task Name:</label>
 
-					<div class="form-group">
-						<h:commandButton id="submitTask" type="submit"
-							styleClass="btn btn-lg btn-primary"
-							action="#{editTaskAction.save()}" value="Update Task"></h:commandButton>
-					</div>
-				</h:form>
-			</div>
-		</div>
-	</ui:define>
+                        <input jsf:id="name" name="name" type="text"
+                               class="form-control" jsf:value="#{editTaskAction.task.name}"
+                               jsf:required="true" jsf:requiredMessage="Task name is required."
+                               p:placeholder="Task name here..."/>
+                        <div class="help-block">
+                            <h:message for="name" showDetail="false" showSummary="true" />
+                        </div>
+                    </div>
+                    <div
+                        class="form-group #{not empty facesContext.getMessageList('form:description')?'has-error':''}">
+                        <h:outputLabel class="control-label" for="description">Task
+                            Description:</h:outputLabel>
+                        <h:inputTextarea id="description"
+                                         class="form-control" rows="8"
+                                         value="#{editTaskAction.task.description}" required="true"
+                                         requiredMessage="Description is required."
+                                         p:placeholder="Describe the task content here..." />
+                        <div class="help-block">
+                            <h:message for="description" showDetail="false"
+                                       showSummary="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:commandButton id="submitTask" type="submit"
+                                         styleClass="btn btn-lg btn-primary"
+                                         action="#{editTaskAction.save()}" value="Update Task"></h:commandButton>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
 </ui:composition>
