@@ -4,3 +4,4 @@
 .project
 *.log*
 
+/event/data
