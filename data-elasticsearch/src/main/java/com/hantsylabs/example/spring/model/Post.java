@@ -1,35 +1,20 @@
 package com.hantsylabs.example.spring.model;
 
-import java.util.Date;
-
-import javax.validation.constraints.NotNull;
-
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldIndex;
 
 @Document(indexName = "conference_idx")
 public class Post {
-	@org.springframework.data.annotation.Id
+	@Id
 	private Long id;
 
-	@org.springframework.data.annotation.Version
-	private Integer version;
+	@Version
+	private Long version;
 
-	@NotNull
-	@Field(store = true, index = FieldIndex.analyzed)
 	private String title;
 
-	@NotNull
-	@Field(store = true, index = FieldIndex.analyzed)
 	private String content;
-
-	@Field(store = false, index = FieldIndex.not_analyzed)
-	private Date createdAt;
-
-	@NotNull
-	@Field(store = false, index = FieldIndex.not_analyzed)
-	private String slug;
 
 	public Long getId() {
 		return id;
@@ -63,26 +48,9 @@ public class Post {
 		this.content = content;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public String getSlug() {
-		return slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
-	}
-
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", version=" + version + ", title=" + title + ", content=" + content + ", createdAt="
-				+ createdAt + ", slug=" + slug + "]";
+		return "Post [id=" + id + ", version=" + version + ", title=" + title + ", content=" + content + "]";
 	}
 
 }

@@ -7,6 +7,4 @@ import com.hantsylabs.example.spring.model.Post;
 public interface PostRepository
 		extends ElasticsearchRepository<Post, Long>{
 
-	Post findBySlug(String slug);
-
 }
