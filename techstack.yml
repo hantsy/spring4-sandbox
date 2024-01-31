@@ -1,0 +1,1533 @@
+repo_name: hantsy/spring4-sandbox
+report_id: 8a1ee3b7ba2908f1ec77fa7601fbd905
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-31T08:26:37+00:00'
+requested_by: hantsy
+provider: github
+branch: master
+detected_tools_count: 118
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox
+  detection_source: Repo Metadata
+- name: Groovy
+  description: A multi-faceted language for the Java platform
+  website_url: https://groovy-lang.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/997/default_7ff5fcd857f42ad25149f659693d8930bffddf14.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox
+  detection_source: Repo Metadata
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  version: '1.8'
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/pom.xml
+  detection_source: Repo Metadata
+  last_updated_by: hantsy
+  last_updated_on: 2013-12-13 07:31:04.000000000 Z
+- name: SQL
+  description: It is a domain-specific language used in programming
+  website_url: https://en.wikipedia.org/wiki/SQL
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/src/main/java/com/hantsylabs/example/spring/config/schema.sql
+  detection_source: batch-jdbc/src/main/java/com/hantsylabs/example/spring/config/schema.sql
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: Apache FreeMarker
+  description: A free Java-based template engine
+  website_url: http://freemarker.incubator.apache.org/index.html
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Java Tools
+  image_url: https://img.stackshare.io/service/4456/ymCgaIO0_400x400.jpg
+  detection_source_url: https://github.com/hantsy/spring4-sandbox
+  detection_source: Repo Metadata
+- name: QueryDSL
+  description: Unified queries for Java
+  website_url: http://www.querydsl.com/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/3881/da8da0c0e6dfbfc596f787ade49381a6_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-envers/pom.xml
+  detection_source: data-envers/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: Spring Framework
+  description: An application framework and inversion of control container for the
+    Java platform
+  website_url: https://spring.io/projects/spring-framework
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/2006/spring-framework-project-logo.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-08-07 08:30:49.000000000 Z
+- name: guava
+  description: Google Core Libraries for Java 6+
+  website_url: https://github.com/google/guava
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Java Tools
+  image_url: https://img.stackshare.io/service/2970/wBjKn0ol.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 16:46:39.000000000 Z
+- name: jQuery
+  description: The Write Less, Do More, JavaScript Library.
+  website_url: http://jquery.com/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-10-26 16:54:00.000000000 Z
+- name: Ehcache
+  description: Java's Most Widely-Used Cache
+  website_url: http://ehcache.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Cache
+  image_url: https://img.stackshare.io/service/3093/EhcacheTwitterIcon.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: H2 Database
+  description: A relational database management system written in Java
+  website_url: http://www.h2database.com/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/3105/h2-logo_square_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: Hazelcast
+  description: Clustering and highly scalable data distribution platform for Java
+  website_url: http://hazelcast.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/2024/default_000f7e56d4be68acfa58a6ea8bd40e65a10e04ff.jpg
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 10:51:04.000000000 Z
+- name: Hibernate
+  description: Idiomatic persistence for Java and relational databases.
+  website_url: http://hibernate.org/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Object Relational Mapper (ORM)
+  image_url: https://img.stackshare.io/service/1756/1uNl_IZX.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: MongoDB
+  description: The database for giant ideas
+  website_url: http://www.mongodb.com/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1030/leaf-360x360.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-mongo-audit/pom.xml
+  detection_source: data-mongo-audit/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-02 14:35:37.000000000 Z
+- name: Neo4j
+  description: The world’s leading Graph Database
+  website_url: http://www.neo4j.com/
+  license: GPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Graph Databases
+  image_url: https://img.stackshare.io/service/1482/FbkjM42a.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: Redis
+  description: Open source (BSD licensed), in-memory data structure store
+  website_url: http://redis.io/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/1031/default_cbce472cd134adc6688572f999e9122b9657d4ba.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 10:51:04.000000000 Z
+- name: Spring Data
+  description: Provides a consistent approach to data access – relational, non-relational,
+    map-reduce, and beyond
+  website_url: https://spring.io/projects/spring-data
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/7624/IG6D4Ro2_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox
+  detection_source: Repo Metadata
+- name: JUnit
+  description: A programmer-oriented testing framework for Java
+  website_url: http://junit.org/
+  license: EPL-1.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Testing Frameworks
+  image_url: https://img.stackshare.io/service/2020/874086.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: Log4j
+  description: A Java-based logging utility
+  website_url: https://logging.apache.org/log4j/2.x/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Monitoring
+  sub_category: Logging Tools
+  image_url: https://img.stackshare.io/service/2804/Coralogix-log4j-integration.jpg
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: Logback
+  description: A logging framework for Java applications
+  website_url: https://logback.qos.ch/
+  open_source: false
+  hosted_saas: false
+  category: Monitoring
+  sub_category: Log Management
+  image_url: https://img.stackshare.io/service/2923/05518ecaa42841e834421e9d6987b04f_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/logging-logback/pom.xml
+  detection_source: logging-logback/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-04-09 12:58:01.000000000 Z
+- name: Mockito
+  description: Tasty mocking framework for unit tests in Java
+  website_url: https://site.mockito.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Testing Frameworks
+  image_url: https://img.stackshare.io/service/2021/4y634TJm_400x400.jpg
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: SLF4J
+  description: Simple logging facade for Java
+  website_url: http://slf4j.org/
+  open_source: false
+  hosted_saas: false
+  category: Monitoring
+  sub_category: Log Management
+  image_url: https://img.stackshare.io/service/2805/05518ecaa42841e834421e9d6987b04f_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: Spock Framework
+  description: The Enterprise-ready testing and specification framework
+  website_url: http://spockframework.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Testing Frameworks
+  image_url: https://img.stackshare.io/service/5548/UB74SoK2_400x400.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: Elasticsearch
+  description: Open Source, Distributed, RESTful Search Engine
+  website_url: https://www.elastic.co/products/elasticsearch
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Search as a Service
+  image_url: https://img.stackshare.io/service/841/Image_2019-05-20_at_4.58.04_PM.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-elasticsearch/pom.xml
+  detection_source: data-elasticsearch/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-06-24 13:50:21.000000000 Z
+- name: ch.qos.logback:logback-classic
+  description: Logback-classic module
+  license: EPL-1.0,LGPL-2.1+
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/logging-logback/pom.xml
+  detection_source: logging-logback/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-04-09 12:58:01.000000000 Z
+- name: com.fasterxml.jackson.core:jackson-annotations
+  description: Core annotations used for value types
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: com.fasterxml.jackson.core:jackson-core
+  description: Core Jackson processing abstractions
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: com.fasterxml.jackson.core:jackson-databind
+  description: 'General data-binding functionality for Jackson: works on core streaming
+    API'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: com.google.guava:guava
+  description: Guava is a suite of core and expanded libraries that include utility
+    classes
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 16:46:39.000000000 Z
+- name: com.h2database:h2
+  description: H2 Database Engine
+  license: MIT-feh
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: com.hazelcast:hazelcast-client
+  description: Hazelcast In-Memory DataGrid
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 16:46:39.000000000 Z
+- name: com.hazelcast:hazelcast-spring
+  description: Open Source In-Memory Data Grid
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: com.jayway.jsonpath:json-path
+  description: Java port of Stefan Goessner JsonPath
+  version: 2.0.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-tiles3/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+  vulnerabilities:
+  - name: json-path Out-of-bounds Write vulnerability
+    cve_id: CVE-2023-51074
+    cve_url: https://github.com/advisories/GHSA-pfh2-hfmq-phg5
+    detected_date: Jan 18
+    severity: moderate
+    first_patched: 2.9.0
+- name: com.querydsl:querydsl-apt
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-envers/pom.xml
+  detection_source: data-envers/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: com.querydsl:querydsl-jpa
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-envers/pom.xml
+  detection_source: data-envers/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: com.sun.faces:jsf-api
+  description: This is the master POM file for Oracle's Implementation of the JSF
+    1.2 Specification
+  license: CDDL-1.1
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-jsf2/pom.xml
+  detection_source: mvc-jsf2/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: com.sun.faces:jsf-impl
+  description: This is the master POM file for Oracle's Implementation of the JSF
+    2.2 Specification
+  license: CDDL-1.1
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-jsf2/pom.xml
+  detection_source: mvc-jsf2/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: commons-collections:commons-collections
+  description: Types that extend and augment the Java Collections Framework
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: commons-dbcp:commons-dbcp
+  description: Commons Database Connection Pooling
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: commons-digester:commons-digester
+  description: The Digester package lets you configure an XML to Java object mapping
+    module which triggers certain actions called rules whenever a particular pattern
+    of nested XML elements is ...
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: commons-io:commons-io
+  description: The Apache Commons IO library contains utility classes
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: commons-pool:commons-pool
+  description: Commons Object Pooling Library
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: javax.annotation:jsr250-api
+  description: JSR-250 Reference Implementation by Glassfish
+  license: CDDL-1.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: javax.cache:cache-api
+  description: Sonatype helps open source projects to set up Maven repositories on
+    https://oss.sonatype.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: javax.el:javax.el-api
+  version: 2.2.5
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-jsf2/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: javax.inject:javax.inject
+  description: The javax.inject API
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api
+  description: Java.net - The Source for Java Technology Collaboration
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: javax.servlet.jsp:javax.servlet.jsp-api
+  description: Java.net - The Source for Java Technology Collaboration
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: javax.servlet:javax.servlet-api
+  description: Java.net - The Source for Java Technology Collaboration
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-rest/pom.xml
+  detection_source: data-rest/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-29 08:17:26.000000000 Z
+- name: javax.servlet:jstl
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-06 17:10:51.000000000 Z
+- name: javax.transaction:javax.transaction-api
+  description: Project GlassFish Java Transaction API
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/generic-type-injection/pom.xml
+  detection_source: generic-type-injection/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2013-12-19 16:14:30.000000000 Z
+- name: javax.transaction:jta
+  description: The javax.transaction package
+  version: '1.1'
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/jdbc/pom.xml
+  detection_source: jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-06-30 15:42:38.000000000 Z
+- name: javax.validation:validation-api
+  description: Bean Validation API
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: joda-time:joda-time
+  description: Date and time library to replace JDK date handling
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-elasticsearch/pom.xml
+  detection_source: data-elasticsearch/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-06-08 15:10:18.000000000 Z
+- name: junit:junit
+  description: JUnit is a unit testing framework for Java
+  license: EPL-1.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: log4j:log4j
+  description: Apache Log4j 1.2
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-05-27 07:34:13.000000000 Z
+- name: net.sf.ehcache:ehcache-core
+  description: This is the ehcache core module
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect
+  description: A dialect for Thymeleaf that allows you to use layout/decorator templates
+    to style your content
+  version: 1.3.3
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-thymeleaf/pom.xml
+  detection_source: mvc-thymeleaf/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-04 14:44:07.000000000 Z
+- name: opensymphony:sitemesh
+  description: 'SiteMesh 2: Official repository'
+  version: 2.4.2
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.apache.commons:commons-lang3
+  description: Apache Commons Lang
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.apache.httpcomponents:httpclient
+  description: Apache HttpComponents Client
+  version: 4.5.1
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+  vulnerabilities:
+  - name: Cross-site scripting in Apache HttpClient
+    cve_id: CVE-2020-13956
+    cve_url: https://github.com/advisories/GHSA-7r82-7xv7-xcpj
+    detected_date: Aug 22
+    severity: moderate
+    first_patched: 4.5.13
+- name: org.apache.logging.log4j:log4j-api
+  description: The Apache Log4j API
+  version: '2.2'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/logging-log4j2/pom.xml
+  detection_source: logging-log4j2/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-04-09 12:58:01.000000000 Z
+  vulnerabilities:
+  - name: Incomplete fix for Apache Log4j vulnerability
+    cve_id: CVE-2021-45046
+    cve_url: https://github.com/advisories/GHSA-7rjr-3q55-vv33
+    detected_date: Dec 14
+    severity: critical
+    first_patched: 2.16.0
+  - name: Remote code injection in Log4j
+    cve_id: CVE-2021-44228
+    cve_url: https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
+    detected_date: Dec 14
+    severity: critical
+    first_patched: 2.15.0
+  - name: Improper Input Validation and Uncontrolled Recursion in Apache Log4j2
+    cve_id: CVE-2021-45105
+    cve_url: https://github.com/advisories/GHSA-p6xc-xr62-6r2g
+    detected_date: Dec 19
+    severity: high
+    first_patched: 2.12.3
+  - name: Improper Input Validation and Injection in Apache Log4j2
+    cve_id: CVE-2021-44832
+    cve_url: https://github.com/advisories/GHSA-8489-44mv-ggj8
+    detected_date: Jan 5
+    severity: moderate
+    first_patched: 2.3.2
+- name: org.apache.logging.log4j:log4j-core
+  description: The Apache Log4j Implementation
+  version: '2.2'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/logging-log4j2/pom.xml
+  detection_source: logging-log4j2/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-04-09 12:58:01.000000000 Z
+  vulnerabilities:
+  - name: Remote code injection in Log4j
+    cve_id: CVE-2021-44228
+    cve_url: https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
+    detected_date: Dec 14
+    severity: critical
+    first_patched: 2.3.1
+  - name: Incomplete fix for Apache Log4j vulnerability
+    cve_id: CVE-2021-45046
+    cve_url: https://github.com/advisories/GHSA-7rjr-3q55-vv33
+    detected_date: Dec 14
+    severity: critical
+    first_patched: 2.12.2
+  - name: Deserialization of Untrusted Data in Log4j
+    cve_id: CVE-2017-5645
+    cve_url: https://github.com/advisories/GHSA-fxph-q3j8-mv87
+    detected_date: Jan 28
+    severity: critical
+    first_patched: 2.8.2
+  - name: Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion
+    cve_id: CVE-2021-45105
+    cve_url: https://github.com/advisories/GHSA-p6xc-xr62-6r2g
+    detected_date: Dec 19
+    severity: high
+    first_patched: 2.3.1
+  - name: Improper Input Validation and Injection in Apache Log4j2
+    cve_id: CVE-2021-44832
+    cve_url: https://github.com/advisories/GHSA-8489-44mv-ggj8
+    detected_date: Jan 5
+    severity: moderate
+    first_patched: 2.3.2
+  - name: Improper validation of certificate with host mismatch in Apache Log4j SMTP
+      appender
+    cve_id: CVE-2020-9488
+    cve_url: https://github.com/advisories/GHSA-vwqq-5vrc-xw9h
+    detected_date: Jan 28
+    severity: low
+    first_patched: 2.13.2
+- name: org.apache.logging.log4j:log4j-slf4j-impl
+  description: Binding between SLF4J API and Log4J2 Core
+  version: '2.2'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/logging-log4j2/pom.xml
+  detection_source: logging-log4j2/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-04-09 12:58:01.000000000 Z
+- name: org.aspectj:aspectjrt
+  description: The runtime needed to execute a program using AspectJ
+  license: EPL-1.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.aspectj:aspectjweaver
+  description: The AspectJ weaver introduces advices to java classes
+  license: EPL-1.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.codehaus.groovy:groovy-all
+  description: 'Groovy: A powerful, dynamic language for the JVM'
+  version: 2.1.8
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/generic-type-injection/pom.xml
+  detection_source: generic-type-injection/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2013-12-22 12:38:27.000000000 Z
+- name: org.easytesting:fest-assert-core
+  description: "'Flexible' or 'fluent' assertions for testing"
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.ehcache:jcache
+  description: Ehcache's wrapper implementation of JSR107 - JCACHE
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: org.freemarker:freemarker
+  description: FreeMarker is a "template engine"; a generic tool to generate text
+    output based on templates
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.glassfish:javax.el
+  description: Obsolete EL3 fork
+  version: 3.0.1
+  license: GPL-2.0-with-classpath-exception
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-rest/pom.xml
+  detection_source: batch-jpa/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-12 12:31:02.000000000 Z
+- name: org.hamcrest:hamcrest-all
+  description: A self-contained hamcrest jar containing all of the sub-modules in
+    a single artifact
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.hamcrest:hamcrest-library
+  description: A library of Hamcrest matchers - deprecated
+  license: DSDP
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.hibernate.javax.persistence:hibernate-jpa-2.1-api
+  description: Clean-room definition of JPA APIs intended for use in developing Hibernate
+    JPA implementation
+  license: EPL-2.0,AAL
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.hibernate:hibernate-core
+  description: Hibernate's core ORM functionality
+  license: LGPL-2.0-only,GPL-3.0-or-later
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.hibernate:hibernate-ehcache
+  description: Integration for using Ehcache 2.x as a Hibernate second-level-cache
+    provider
+  license: LGPL-2.0-only,GPL-3.0-or-later
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/jpa-cache/pom.xml
+  detection_source: jpa-cache/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.hibernate:hibernate-entitymanager
+  description: ''
+  license: LGPL-2.0-only,GPL-3.0-or-later
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.hibernate:hibernate-envers
+  description: Hibernate's entity version
+  license: LGPL-2.0-only,GPL-3.0-or-later
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-envers/pom.xml
+  detection_source: data-envers/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-09-18 05:36:15.000000000 Z
+- name: org.hibernate:hibernate-infinispan
+  description: A module of the Hibernate Core project
+  license: LGPL-2.1+
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/jpa-cache/pom.xml
+  detection_source: jpa-cache/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.hibernate:hibernate-validator
+  description: Hibernate's Bean Validation
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.infinispan:infinispan-client-hotrod
+  description: Infinispan Hot Rod Client
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-08-07 10:08:13.000000000 Z
+- name: org.mockito:mockito-core
+  description: Mockito mock objects library core API and implementation
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.mongodb:mongo-java-driver
+  description: The MongoDB Java driver
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-mongo-audit/pom.xml
+  detection_source: data-mongo-audit/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.neo4j.app:neo4j-server
+  description: Standalone Neo4j server application
+  license: GPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.neo4j.test:neo4j-harness
+  description: Components for writing integration tests with Neo4j
+  license: GPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.neo4j:neo4j-kernel
+  description: Neo4j kernel is a lightweight, embedded Java database designed to store
+    data structured as graphs rather than tables
+  license: GPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.seleniumhq.selenium:selenium-htmlunit-driver
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.seleniumhq.selenium:selenium-support
+  description: Selenium automates browsers
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.slf4j:jcl-over-slf4j
+  description: JCL 1.2 implemented over SLF4J
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.slf4j:slf4j-api
+  description: The slf4j API
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.slf4j:slf4j-log4j12
+  description: SLF4J LOG4J-12 Binding
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.spockframework:spock-core
+  description: Spock is a testing and specification framework for Java and Groovy
+    applications
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.spockframework:spock-spring
+  description: Spock's Spring Module makes it possible to use Spring's TestContext
+    framework together with Spock
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.springframework.batch:spring-batch-core
+  description: Core domain for batch processing
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework.data:spring-data-jpa
+  description: Spring Data module for JPA repositories
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-envers/pom.xml
+  detection_source: data-envers/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-09-18 05:36:15.000000000 Z
+- name: org.springframework.data:spring-data-mongodb
+  description: MongoDB support for Spring Data
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-mongo-audit/pom.xml
+  detection_source: data-mongo-audit/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework.data:spring-data-neo4j
+  description: Neo4J support for Spring Data
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-neo4j/pom.xml
+  detection_source: data-neo4j/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-02-28 15:46:38.000000000 Z
+- name: org.springframework.data:spring-data-redis
+  description: Global parent pom.xml to be used by Spring Data modules
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-03-02 03:36:29.000000000 Z
+- name: org.springframework.security:spring-security-test
+  description: Spring-security-test
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.springframework:spring-aop
+  description: Spring AOP
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-aspects
+  description: Spring Aspects
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-beans
+  description: Spring Beans
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-context
+  description: Spring Context
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-context-support
+  description: Spring Context Support
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-core
+  description: Spring Core
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-jdbc
+  description: Spring JDBC
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-orm
+  description: Spring Object/Relational Mapping
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-test
+  description: Spring TestContext Framework
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/batch-jdbc/pom.xml
+  detection_source: batch-jdbc/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-tx
+  description: Spring Transaction
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/data-mongo-audit/pom.xml
+  detection_source: data-mongo-audit/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2015-12-25 14:40:38.000000000 Z
+- name: org.springframework:spring-web
+  description: Spring Web
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.springframework:spring-webmvc
+  description: Spring Web MVC
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.thymeleaf:thymeleaf
+  description: Modern server-side Java template engine for both web and standalone
+    environments
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-thymeleaf/pom.xml
+  detection_source: mvc-thymeleaf/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-08 12:27:19.000000000 Z
+- name: org.thymeleaf:thymeleaf-spring4
+  description: XML/XHTML/HTML5 template engine for Java
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-thymeleaf/pom.xml
+  detection_source: mvc-thymeleaf/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-03-08 12:27:19.000000000 Z
+- name: org.webjars:bootstrap
+  description: WebJar for Bootstrap
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.webjars:font-awesome
+  description: WebJar for Font Awesome
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: org.webjars:jquery
+  description: WebJar for jQuery
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/mvc-freemarker/pom.xml
+  detection_source: mvc-freemarker/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2016-01-25 13:02:19.000000000 Z
+- name: redis.clients:jedis
+  description: Jedis is a blazingly small and sane Redis java client
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/hantsy/spring4-sandbox/blob/master/cache-concurrentmap/pom.xml
+  detection_source: cache-concurrentmap/pom.xml
+  last_updated_by: hantsy
+  last_updated_on: 2014-07-26 15:20:01.000000000 Z
